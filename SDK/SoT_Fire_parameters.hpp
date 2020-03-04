@@ -1,0 +1,48 @@
+#pragma once
+
+// SeaOfThieves (1.6.4) SDK
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x8)
+#endif
+
+#include "../SDK.hpp"
+
+namespace SDK
+{
+//---------------------------------------------------------------------------
+//Parameters
+//---------------------------------------------------------------------------
+
+// Function Fire.FlammableComponent.OnRep_OnFire
+struct UFlammableComponent_OnRep_OnFire_Params
+{
+};
+
+// Function Fire.FlammableComponent.Multicast_NotifyExtinguished_RPC
+struct UFlammableComponent_Multicast_NotifyExtinguished_RPC_Params
+{
+	struct FVector                                     InExtinguishLocationWS;                                   // (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+};
+
+// Function Fire.FirePropagationInterface.SetAllCellsState
+struct UFirePropagationInterface_SetAllCellsState_Params
+{
+	TEnumAsByte<EFireCellState>                        State;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Fire.ShipFirePropagationComponent.OnRep_CellData
+struct UShipFirePropagationComponent_OnRep_CellData_Params
+{
+};
+
+// Function Fire.ShipFirePropagationComponent.OnRep_CellCharringData
+struct UShipFirePropagationComponent_OnRep_CellCharringData_Params
+{
+};
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif
