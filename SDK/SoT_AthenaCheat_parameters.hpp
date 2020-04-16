@@ -270,6 +270,11 @@ struct UAthenaCheatManager_TeleportToHideout_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.TeleportToAggressiveGhostShipEncounter
+struct UAthenaCheatManager_TeleportToAggressiveGhostShipEncounter_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.TeleportShip
 struct UAthenaCheatManager_TeleportShip_Params
 {
@@ -614,6 +619,16 @@ struct UAthenaCheatManager_SpawnNumberOfAI_Params
 	int                                                NumToSpawn;                                               // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaCheat.AthenaCheatManager.SpawnNightmareAggressiveGhostShipEncountersRandom
+struct UAthenaCheatManager_SpawnNightmareAggressiveGhostShipEncountersRandom_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.SpawnNightmareAggressiveGhostShipEncountersNearToPlayer
+struct UAthenaCheatManager_SpawnNightmareAggressiveGhostShipEncountersNearToPlayer_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.SpawnMultipleTreasureChestsOfType
 struct UAthenaCheatManager_SpawnMultipleTreasureChestsOfType_Params
 {
@@ -876,6 +891,11 @@ struct UAthenaCheatManager_ShowAllWelds_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.ShowAllRomeBeacons
+struct UAthenaCheatManager_ShowAllRomeBeacons_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.ShowAllItemsInRadialInventory
 struct UAthenaCheatManager_ShowAllItemsInRadialInventory_Params
 {
@@ -1133,6 +1153,12 @@ struct UAthenaCheatManager_SetGrogSecondary_Params
 	bool                                               InValue;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaCheat.AthenaCheatManager.SetGodMode
+struct UAthenaCheatManager_SetGodMode_Params
+{
+	bool                                               GodModeOn;                                                // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function AthenaCheat.AthenaCheatManager.SetFOV
 struct UAthenaCheatManager_SetFOV_Params
 {
@@ -1313,10 +1339,25 @@ struct UAthenaCheatManager_RewindPhysicsSceneBy_Params
 	float                                              SecondsToRewindBy;                                        // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaCheat.AthenaCheatManager.ReviveLocalPlayerInstantly
+struct UAthenaCheatManager_ReviveLocalPlayerInstantly_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.ReviveLocalPlayerAccordingToReviveTime
+struct UAthenaCheatManager_ReviveLocalPlayerAccordingToReviveTime_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.ResurfaceShipByActorId
 struct UAthenaCheatManager_ResurfaceShipByActorId_Params
 {
 	struct FString                                     ShipActorIdString;                                        // (Parm, ZeroConstructor)
+};
+
+// Function AthenaCheat.AthenaCheatManager.RestoreAndRestockShipAndPlayer
+struct UAthenaCheatManager_RestoreAndRestockShipAndPlayer_Params
+{
 };
 
 // Function AthenaCheat.AthenaCheatManager.RestockIslandBarrels
@@ -1464,6 +1505,12 @@ struct UAthenaCheatManager_RemoveAllFog_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.RemoveAISpawnContext
+struct UAthenaCheatManager_RemoveAISpawnContext_Params
+{
+	struct FString                                     ContextName;                                              // (Parm, ZeroConstructor)
+};
+
 // Function AthenaCheat.AthenaCheatManager.RebuildPirateFromSeed
 struct UAthenaCheatManager_RebuildPirateFromSeed_Params
 {
@@ -1506,6 +1553,11 @@ struct UAthenaCheatManager_PrintAllNetworkActors_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.PrintAISpawnContexts
+struct UAthenaCheatManager_PrintAISpawnContexts_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.PlayerAnimationOverride
 struct UAthenaCheatManager_PlayerAnimationOverride_Params
 {
@@ -1537,6 +1589,11 @@ struct UAthenaCheatManager_MessageBoxOnGraphicsThreadTest_Params
 
 // Function AthenaCheat.AthenaCheatManager.MakeSharksBrainDead
 struct UAthenaCheatManager_MakeSharksBrainDead_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.MakeLocalPlayerRevivable
+struct UAthenaCheatManager_MakeLocalPlayerRevivable_Params
 {
 };
 
@@ -1782,6 +1839,11 @@ struct UAthenaCheatManager_IgniteAllShipFires_Params
 
 // Function AthenaCheat.AthenaCheatManager.HideTaleDebug
 struct UAthenaCheatManager_HideTaleDebug_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.HideAllRomeBeacons
+struct UAthenaCheatManager_HideAllRomeBeacons_Params
 {
 };
 
@@ -2325,6 +2387,11 @@ struct UAthenaCheatManager_CreateDebugAISpawner_Params
 	struct FString                                     SpawnerAssetName;                                         // (Parm, ZeroConstructor)
 };
 
+// Function AthenaCheat.AthenaCheatManager.ContextualPromptCountersToggleDebugDraw
+struct UAthenaCheatManager_ContextualPromptCountersToggleDebugDraw_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.CompleteVoyage
 struct UAthenaCheatManager_CompleteVoyage_Params
 {
@@ -2485,11 +2552,6 @@ struct UAthenaCheatManager_AIPlayerShip_Params
 {
 };
 
-// Function AthenaCheat.AthenaCheatManager.AggressiveGhostShipEncounterGoToNextWave
-struct UAthenaCheatManager_AggressiveGhostShipEncounterGoToNextWave_Params
-{
-};
-
 // Function AthenaCheat.AthenaCheatManager.AdjustGhostShader
 struct UAthenaCheatManager_AdjustGhostShader_Params
 {
@@ -2540,6 +2602,12 @@ struct UAthenaCheatManager_AddDrunkenness_Params
 {
 	int                                                DrunkennessType;                                          // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	float                                              DrunkennessChange;                                        // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaCheat.AthenaCheatManager.AddAISpawnContext
+struct UAthenaCheatManager_AddAISpawnContext_Params
+{
+	struct FString                                     ContextName;                                              // (Parm, ZeroConstructor)
 };
 
 // Function AthenaCheat.AthenaCheatManager.ActivateSkellyFortOfTheDamned

@@ -72,6 +72,47 @@ public:
 };
 
 
+// Class AthenaEngine.BoxedRpcDispatcherComponent
+// 0x0008 (0x00D0 - 0x00C8)
+class UBoxedRpcDispatcherComponent : public UActorComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class AthenaEngine.BoxedRpcDispatcherComponent");
+		return ptr;
+	}
+
+
+	void Server_SendRpc(const struct FSerialisedRpc& Event);
+	void NetMulticastExcludeServer_SendRpc(const struct FSerialisedRpc& Event);
+	void Client_SendRpc(const struct FSerialisedRpc& Event);
+};
+
+
+// Class AthenaEngine.DynamicColourPointLightComponent
+// 0x0130 (0x0580 - 0x0450)
+class UDynamicColourPointLightComponent : public UPointLightComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x78];                                      // 0x0450(0x0078) MISSED OFFSET
+	struct FRuntimeFloatCurve                          DeactivationCurve;                                        // 0x04C8(0x0080) (Edit)
+	unsigned char                                      UnknownData01[0x38];                                      // 0x0548(0x0038) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class AthenaEngine.DynamicColourPointLightComponent");
+		return ptr;
+	}
+
+
+	void DeactivateLight(bool Blend);
+	void ActivateLight(bool Blend);
+};
+
+
 // Class AthenaEngine.EmptyObject
 // 0x0000 (0x0028 - 0x0028)
 class UEmptyObject : public UObject
@@ -148,6 +189,25 @@ public:
 		return ptr;
 	}
 
+};
+
+
+// Class AthenaEngine.PlayModeHelpers
+// 0x0000 (0x0028 - 0x0028)
+class UPlayModeHelpers : public UBlueprintFunctionLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class AthenaEngine.PlayModeHelpers");
+		return ptr;
+	}
+
+
+	void STATIC_SetPlayModeOverride(TEnumAsByte<EPlayMode> NewPlayModeOverride);
+	TEnumAsByte<EPlayMode> STATIC_GetPlayMode(class UObject* WorldContext);
+	void STATIC_ClearPlayModeOverride();
 };
 
 

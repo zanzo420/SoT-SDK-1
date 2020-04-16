@@ -15940,6 +15940,12 @@ struct UCanvas_K2_Deproject_Params
 	struct FVector                                     WorldDirection;                                           // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.Canvas.DrawTextures
+struct UCanvas_DrawTextures_Params
+{
+	TArray<struct FTextureRenderData>                  RenderDatas;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
+
 // Function Engine.CheatManager.WidgetReflector
 struct UCheatManager_WidgetReflector_Params
 {

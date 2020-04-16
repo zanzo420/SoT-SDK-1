@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_FishingFish_Islehopper_03_Colour_05_Amethyst.BP_FishingFish_Islehopper_03_Colour_05_Amethyst_C
-// 0x0000 (0x08F0 - 0x08F0)
+// 0x0000 (0x0900 - 0x0900)
 class ABP_FishingFish_Islehopper_03_Colour_05_Amethyst_C : public ABP_FishingFish_Islehopper_03_C
 {
 public:

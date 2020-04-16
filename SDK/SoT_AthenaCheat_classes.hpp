@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class AthenaCheat.AthenaCheatManager
-// 0x0068 (0x00E0 - 0x0078)
+// 0x0078 (0x00F0 - 0x0078)
 class UAthenaCheatManager : public UCheatManager
 {
 public:
@@ -23,7 +23,7 @@ public:
 	TArray<struct FWorldMarkerDesc>                    CreatedWorldMarkers;                                      // 0x00B0(0x0010) (ZeroConstructor, Transient)
 	class UGameEventSchedulerSettingsAsset*            DebugSchedulerSettings;                                   // 0x00C0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	float                                              TeleportToDigsiteHeightOffset;                            // 0x00C8(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x14];                                      // 0x00CC(0x0014) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x24];                                      // 0x00CC(0x0024) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -79,6 +79,7 @@ public:
 	void TeleportToNearestTreasureLocation();
 	void TeleportToLocation(float LocationX, float LocationY, float LocationZ);
 	void TeleportToHideout();
+	void TeleportToAggressiveGhostShipEncounter();
 	void TeleportShip(float X, float Y, float Z);
 	void TeleportPlayerToSafety();
 	void TeleportPlayerToOffsetAndReturn(float OffsetX, float OffsetY, float OffsetZ, float ReturnTime);
@@ -133,6 +134,8 @@ public:
 	void SpawnShip(float SpawnLocationX, float SpawnLocationY, float SpawnLocationZ, float SpawnYaw);
 	void SpawnRomeTreasureChestOfType(const struct FString& ChestTypeString);
 	void SpawnNumberOfAI(const struct FString& AIDescString, int NumToSpawn);
+	void SpawnNightmareAggressiveGhostShipEncountersRandom();
+	void SpawnNightmareAggressiveGhostShipEncountersNearToPlayer();
 	void SpawnMultipleTreasureChestsOfType(int Num, struct FString* ChestTypeString);
 	void SpawnMessageInABottle(const struct FString& MessageInABottleTypeString);
 	void SpawnMermaid();
@@ -178,6 +181,7 @@ public:
 	void ShowTaleDebug();
 	void ShowRandomCrewMemberGamerCard();
 	void ShowAllWelds();
+	void ShowAllRomeBeacons();
 	void ShowAllItemsInRadialInventory();
 	void ShowAllianceStatus(const struct FString& CrewId);
 	void ShipwrecksSpawnOne(float SpawnLocationX, float SpawnLocationY, float SpawnLocationZ);
@@ -223,6 +227,7 @@ public:
 	void SetIdleDisconnectEnabled(bool Enabled);
 	void SetHealthInfoReplicateOverride(bool bActive);
 	void SetGrogSecondary(bool InValue);
+	void SetGodMode(bool GodModeOn);
 	void SetFOV(float InNewFOV);
 	void SetFlameOfFateColour(int InFlameOfFateType);
 	void SetDebugItemSource(const struct FString& Source);
@@ -255,7 +260,10 @@ public:
 	void SchedulerAdvance(float Time);
 	void SailShip();
 	void RewindPhysicsSceneBy(float SecondsToRewindBy);
+	void ReviveLocalPlayerInstantly();
+	void ReviveLocalPlayerAccordingToReviveTime();
 	void ResurfaceShipByActorId(const struct FString& ShipActorIdString);
+	void RestoreAndRestockShipAndPlayer();
 	void RestockIslandBarrels();
 	void RestockAllReplenishables();
 	void RespawnAllIslandItemSpawners();
@@ -284,6 +292,7 @@ public:
 	void RemoveItemInSlot(int SlotIndex);
 	void RemoveDebugPetSpawners();
 	void RemoveAllFog();
+	void RemoveAISpawnContext(const struct FString& ContextName);
 	void RebuildPirateFromSeed(int Seed);
 	void ReallyScrambleMyGamertag();
 	void PushShip(float FwdSpdInMetersPerSecond);
@@ -292,12 +301,14 @@ public:
 	void PrintTime();
 	void PrintNPCs();
 	void PrintAllNetworkActors();
+	void PrintAISpawnContexts();
 	void PlayerAnimationOverride(const struct FName& Name);
 	void OverrideShipPartFromCatalogue(const struct FString& InShipActorIdConsoleString, int InCataloguePartIndex, int InCataloguePartCustomisationIndex);
 	void OpenSkeletonFortDoor();
 	void MoveStormToPlayer();
 	void MessageBoxOnGraphicsThreadTest();
 	void MakeSharksBrainDead();
+	void MakeLocalPlayerRevivable();
 	void MakeDebugPetSpawner();
 	void LogShipHierarchy();
 	void LogServerShipHierarchy();
@@ -343,6 +354,7 @@ public:
 	void IgniteClosestShip();
 	void IgniteAllShipFires();
 	void HideTaleDebug();
+	void HideAllRomeBeacons();
 	void HealthSet(float Value);
 	void HealthReset();
 	void HealthRegenResetToEmpty();
@@ -436,6 +448,7 @@ public:
 	void CreateDebugReapersChestMarkerAtPlayerLocation();
 	void CreateDebugAISpawnerAt(const struct FString& SpawnerAssetName, const struct FString& LocationActorName);
 	void CreateDebugAISpawner(const struct FString& SpawnerAssetName);
+	void ContextualPromptCountersToggleDebugDraw();
 	void CompleteVoyage();
 	void CompleteAllActivePuzzleVaults();
 	void CompleteActiveQuests();
@@ -466,7 +479,6 @@ public:
 	void ApplyCursedCannonballStatusToPlayer(const struct FString& CannonballTypeString);
 	void AllowTeleportWithItems(bool CanTeleport);
 	void AIPlayerShip();
-	void AggressiveGhostShipEncounterGoToNextWave();
 	void AdjustGhostShader(bool Enabled, float InStartingAmount, float InTargetAmount, float InVengeanceStartingAmount, float InVengeanceTargetAmount, float InDelayBeforeStart, float InBlendDuration);
 	void AddShipToCrew(const struct FString& ActorIdString, const struct FString& CrewId);
 	void AddRandomPetForAllPlayers();
@@ -474,6 +486,7 @@ public:
 	void AddPetForPlayer(int PetTypeIndex, int PetPartIndex);
 	void AddPetForAllPlayers(int PetTypeIndex, int PetPartIndex);
 	void AddDrunkenness(int DrunkennessType, float DrunkennessChange);
+	void AddAISpawnContext(const struct FString& ContextName);
 	void ActivateSkellyFortOfTheDamned(const struct FString& FortName);
 	void ActivateSkellyFort(const struct FString& FortName);
 	void ActivateEmissaryFlagCompany(const struct FString& CompanyId);

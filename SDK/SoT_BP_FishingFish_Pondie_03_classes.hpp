@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_FishingFish_Pondie_03.BP_FishingFish_Pondie_03_C
-// 0x0000 (0x08F0 - 0x08F0)
+// 0x0000 (0x0900 - 0x0900)
 class ABP_FishingFish_Pondie_03_C : public ABP_FishingFish_Pondie_Base_C
 {
 public:

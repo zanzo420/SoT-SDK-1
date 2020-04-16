@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_FishingFish_Wrecker_05.BP_FishingFish_Wrecker_05_C
-// 0x0000 (0x08F0 - 0x08F0)
+// 0x0000 (0x0900 - 0x0900)
 class ABP_FishingFish_Wrecker_05_C : public ABP_FishingFish_Wrecker_Base_C
 {
 public:

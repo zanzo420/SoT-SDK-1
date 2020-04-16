@@ -14,6 +14,16 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function EmissaryLevel.EmissaryParticipantComponent.OnRep_EmissaryLevel
+struct UEmissaryParticipantComponent_OnRep_EmissaryLevel_Params
+{
+};
+
+// Function EmissaryLevel.EmissaryVoyageInlineVoteConsumerBase.OnRep_Votes
+struct UEmissaryVoyageInlineVoteConsumerBase_OnRep_Votes_Params
+{
+};
+
 }
 
 #ifdef _MSC_VER

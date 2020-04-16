@@ -123,9 +123,9 @@ void UBP_Prompt_RepairShip_C::OnCurrentShipChanged(const struct FEventCurrentShi
 // Function BP_Prompt_RepairShip.BP_Prompt_RepairShip_C.OnShipDamaged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FEventShipDamaged       Event                          (Parm)
+// struct FDamageZoneDamageLevelChanged Event                          (Parm)
 
-void UBP_Prompt_RepairShip_C::OnShipDamaged(const struct FEventShipDamaged& Event)
+void UBP_Prompt_RepairShip_C::OnShipDamaged(const struct FDamageZoneDamageLevelChanged& Event)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_RepairShip.BP_Prompt_RepairShip_C.OnShipDamaged");
 

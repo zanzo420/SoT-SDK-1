@@ -675,13 +675,14 @@ public:
 
 
 // Class Tales.TaleQuestGrantRewardStepDesc
-// 0x0020 (0x0050 - 0x0030)
+// 0x0028 (0x0058 - 0x0030)
 class UTaleQuestGrantRewardStepDesc : public UTaleQuestStepDesc
 {
 public:
 	struct FRewardId                                   RewardId;                                                 // 0x0030(0x0008) (Edit)
 	class UClass*                                      Company;                                                  // 0x0038(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FGuid                                       Id;                                                       // 0x0040(0x0010) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       Feature;                                                  // 0x0050(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

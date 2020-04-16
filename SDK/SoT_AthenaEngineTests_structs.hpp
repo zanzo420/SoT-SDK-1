@@ -8,6 +8,19 @@
 
 namespace SDK
 {
+//---------------------------------------------------------------------------
+//Script Structs
+//---------------------------------------------------------------------------
+
+// ScriptStruct AthenaEngineTests.TestBoxedRpc
+// 0x0038 (0x0048 - 0x0010)
+struct FTestBoxedRpc : public FBoxedRpc
+{
+	unsigned char                                      UnknownData00[0x30];                                      // 0x0010(0x0030) MISSED OFFSET
+	int                                                Identifier;                                               // 0x0040(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x0044(0x0004) MISSED OFFSET
+};
+
 }
 
 #ifdef _MSC_VER

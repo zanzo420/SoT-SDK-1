@@ -66,6 +66,38 @@ public:
 };
 
 
+// Class AthenaEngineTests.TestActorWithDynamicColourPointLightComponent
+// 0x0008 (0x0418 - 0x0410)
+class ATestActorWithDynamicColourPointLightComponent : public AActor
+{
+public:
+	class UDynamicColourPointLightComponent*           LightComponent;                                           // 0x0410(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class AthenaEngineTests.TestActorWithDynamicColourPointLightComponent");
+		return ptr;
+	}
+
+};
+
+
+// Class AthenaEngineTests.TestBoxedRpcDispatcherComponent
+// 0x00B0 (0x0180 - 0x00D0)
+class UTestBoxedRpcDispatcherComponent : public UBoxedRpcDispatcherComponent
+{
+public:
+	unsigned char                                      UnknownData00[0xB0];                                      // 0x00D0(0x00B0) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class AthenaEngineTests.TestBoxedRpcDispatcherComponent");
+		return ptr;
+	}
+
+};
+
+
 // Class AthenaEngineTests.TestForceFeedbackCondition
 // 0x0010 (0x0038 - 0x0028)
 class UTestForceFeedbackCondition : public UForceFeedbackCondition

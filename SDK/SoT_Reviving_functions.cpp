@@ -55,13 +55,15 @@ void UReviveComponent::HandleOwningCharacterEndPlay()
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*  MeshComponent                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class AActor*                  InReviveableOwner              (Parm, ZeroConstructor, IsPlainOldData)
 
-void AReviveGhost::SetupGhostMaterials(class USkeletalMeshComponent* MeshComponent)
+void AReviveGhost::SetupGhostMaterials(class USkeletalMeshComponent* MeshComponent, class AActor* InReviveableOwner)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function Reviving.ReviveGhost.SetupGhostMaterials");
 
 	AReviveGhost_SetupGhostMaterials_Params params;
 	params.MeshComponent = MeshComponent;
+	params.InReviveableOwner = InReviveableOwner;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
