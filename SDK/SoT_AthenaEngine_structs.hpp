@@ -41,6 +41,14 @@ enum class EPlayMode : uint8_t
 //Script Structs
 //---------------------------------------------------------------------------
 
+// ScriptStruct AthenaEngine.SerialisedRpc
+// 0x0020
+struct FSerialisedRpc
+{
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0000(0x0018) MISSED OFFSET
+	class UScriptStruct*                               ContentsType;                                             // 0x0018(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct AthenaEngine.StringAssetClassPairFeatureOverride
 // 0x0028
 struct FStringAssetClassPairFeatureOverride

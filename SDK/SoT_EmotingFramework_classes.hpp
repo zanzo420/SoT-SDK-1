@@ -45,13 +45,14 @@ public:
 
 
 // Class EmotingFramework.EmoteSettings
-// 0x0018 (0x0050 - 0x0038)
+// 0x0028 (0x0060 - 0x0038)
 class UEmoteSettings : public UDeveloperSettings
 {
 public:
 	struct FStringAssetReference                       EmoteIdListingAsset;                                      // 0x0038(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
-	int                                                Pages;                                                    // 0x0048(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x004C(0x0004) MISSED OFFSET
+	struct FStringAssetReference                       EmoteItemCategoriesListingAsset;                          // 0x0048(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	int                                                Pages;                                                    // 0x0058(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x005C(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

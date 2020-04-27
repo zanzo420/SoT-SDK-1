@@ -1028,23 +1028,6 @@ void UBP_Humanoid_ThirdPerson_C::EvaluateGraphExposedInputs_ExecuteUbergraph_BP_
 }
 
 
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Humanoid_ThirdPerson_AnimGraphNode_TransitionResult_197566794A0B03578792148F367721EC
-// (BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Humanoid_ThirdPerson_AnimGraphNode_TransitionResult_197566794A0B03578792148F367721EC()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Humanoid_ThirdPerson_AnimGraphNode_TransitionResult_197566794A0B03578792148F367721EC");
-
-	UBP_Humanoid_ThirdPerson_C_EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Humanoid_ThirdPerson_AnimGraphNode_TransitionResult_197566794A0B03578792148F367721EC_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Humanoid_ThirdPerson_AnimGraphNode_TransitionResult_5D434BCA4928B253E7E70FAC478291AF
 // (BlueprintEvent)
 
@@ -9486,40 +9469,6 @@ void UBP_Humanoid_ThirdPerson_C::AnimNotify_GenerateNewRandomSeed()
 }
 
 
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_AllocateCorrectFleeAnimSet
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_AllocateCorrectFleeAnimSet()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_AllocateCorrectFleeAnimSet");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_AllocateCorrectFleeAnimSet_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SelectAIFleeVariant
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_SelectAIFleeVariant()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SelectAIFleeVariant");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_SelectAIFleeVariant_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SelectPitchOverrideVariant
 // (BlueprintCallable, BlueprintEvent)
 
@@ -9950,176 +9899,6 @@ void UBP_Humanoid_ThirdPerson_C::OnImpact(struct FVector* ImpactLocation, struct
 	params.ImpactNormal = ImpactNormal;
 	params.ImpactVelocity = ImpactVelocity;
 	params.HitReactionAnimType = HitReactionAnimType;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAICheer_B
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_NewAICheer_B()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAICheer_B");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_NewAICheer_B_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAICheer_A
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_NewAICheer_A()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAICheer_A");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_NewAICheer_A_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAITaunt_B
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_NewAITaunt_B()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAITaunt_B");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_NewAITaunt_B_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAITaunt_A
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_NewAITaunt_A()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAITaunt_A");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_NewAITaunt_A_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_ResetRamImpact
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_ResetRamImpact()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_ResetRamImpact");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_ResetRamImpact_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SetSkelCaptIdleB
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_SetSkelCaptIdleB()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SetSkelCaptIdleB");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_SetSkelCaptIdleB_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SetSkelCaptIdleA
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_SetSkelCaptIdleA()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SetSkelCaptIdleA");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_SetSkelCaptIdleA_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_ResetShipCaptainState
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_ResetShipCaptainState()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_ResetShipCaptainState");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_ResetShipCaptainState_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_StartleEnd
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_StartleEnd()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_StartleEnd");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_StartleEnd_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_UpdateFleeAnimation
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_ThirdPerson_C::AnimNotify_UpdateFleeAnimation()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_UpdateFleeAnimation");
-
-	UBP_Humanoid_ThirdPerson_C_AnimNotify_UpdateFleeAnimation_Params params;
 
 	auto flags = fn->FunctionFlags;
 
@@ -10953,6 +10732,23 @@ void UBP_Humanoid_ThirdPerson_C::AnimNotify_CheckAlternate()
 	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_CheckAlternate");
 
 	UBP_Humanoid_ThirdPerson_C_AnimNotify_CheckAlternate_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_BeckonStart
+// (BlueprintCallable, BlueprintEvent)
+
+void UBP_Humanoid_ThirdPerson_C::AnimNotify_BeckonStart()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_BeckonStart");
+
+	UBP_Humanoid_ThirdPerson_C_AnimNotify_BeckonStart_Params params;
 
 	auto flags = fn->FunctionFlags;
 

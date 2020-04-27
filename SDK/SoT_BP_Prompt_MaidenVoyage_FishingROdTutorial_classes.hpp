@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C
-// 0x0479 (0x0591 - 0x0118)
+// 0x0510 (0x0628 - 0x0118)
 class UBP_Prompt_MaidenVoyage_FishingRodTutorial_C : public UBP_PromptCoordinator_Base_C
 {
 public:
@@ -45,6 +45,9 @@ public:
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0541(0x0007) MISSED OFFSET
 	struct FObjectMessagingHandle                      Handle_FishEscaped;                                       // 0x0548(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                               State_Completed;                                          // 0x0590(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0591(0x0007) MISSED OFFSET
+	struct FObjectMessagingHandle                      Handle_PlayerDeath;                                       // 0x0598(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FObjectMessagingHandle                      Handle_DockToObject;                                      // 0x05E0(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -53,6 +56,7 @@ public:
 	}
 
 
+	void FullStateReset();
 	void OnFishEscapingFunc();
 	void OnBattleWhilstReelingFunc(const struct FEventFishingReelingWhileBattlingStateChange& EventFishingReelingWhileBattlingStateChange);
 	void OnFishCaughtFunc();
@@ -65,6 +69,8 @@ public:
 	void Evaluate();
 	void RegisterCharacterEvents_Implementable(struct FObjectMessagingDispatcherHandle* CharacterDispatcher);
 	void UnregisterCharacterEvents_Implementable(struct FObjectMessagingDispatcherHandle* CharacterDispatcher);
+	void PostInitialize();
+	void UnregisterOtherEvents_Implementable();
 	void OnWield(const struct FEventObjectWielded& Event);
 	void OnFishTired(const struct FEventFishingFishBecameTired& Event);
 	void OnCastRod(const struct FEventSetFishingAnimationState& Event);
@@ -73,6 +79,7 @@ public:
 	void OnBattleWhilstReeling(const struct FEventFishingReelingWhileBattlingStateChange& Event);
 	void OnStow(const struct FEventStartStow& Event);
 	void OnFishEscaping(const struct FEventFishingFishEscaping& Event);
+	void OnTakeControl(const struct FEventPlayerTakenControlOfControllable& NewParam);
 	void ExecuteUbergraph_BP_Prompt_MaidenVoyage_FishingRodTutorial(int EntryPoint);
 };
 

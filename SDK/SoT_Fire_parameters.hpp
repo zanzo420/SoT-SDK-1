@@ -25,6 +25,26 @@ struct UFlammableComponent_Multicast_NotifyExtinguished_RPC_Params
 	struct FVector                                     InExtinguishLocationWS;                                   // (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 };
 
+// Function Fire.FlammableComponent.IncrementFireSource
+struct UFlammableComponent_IncrementFireSource_Params
+{
+};
+
+// Function Fire.FlammableComponent.DecrementFireSource
+struct UFlammableComponent_DecrementFireSource_Params
+{
+};
+
+// Function Fire.FlammableInterface.IncrementFireSource
+struct UFlammableInterface_IncrementFireSource_Params
+{
+};
+
+// Function Fire.FlammableInterface.DecrementFireSource
+struct UFlammableInterface_DecrementFireSource_Params
+{
+};
+
 // Function Fire.FirePropagationInterface.SetAllCellsState
 struct UFirePropagationInterface_SetAllCellsState_Params
 {

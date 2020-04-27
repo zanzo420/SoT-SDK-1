@@ -12,6 +12,23 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
+// Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.ResetState
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UBP_Prompt_UseAMermaid_C::ResetState()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.ResetState");
+
+	UBP_Prompt_UseAMermaid_C_ResetState_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.EvaluatePromptDisplayState
 // (Event, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -118,6 +135,26 @@ void UBP_Prompt_UseAMermaid_C::UnregisterOtherEvents_Implementable()
 	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.UnregisterOtherEvents_Implementable");
 
 	UBP_Prompt_UseAMermaid_C_UnregisterOtherEvents_Implementable_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.RegisterCharacterEvents_Implementable
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FObjectMessagingDispatcherHandle* CharacterDispatcher            (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UBP_Prompt_UseAMermaid_C::RegisterCharacterEvents_Implementable(struct FObjectMessagingDispatcherHandle* CharacterDispatcher)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.RegisterCharacterEvents_Implementable");
+
+	UBP_Prompt_UseAMermaid_C_RegisterCharacterEvents_Implementable_Params params;
+	params.CharacterDispatcher = CharacterDispatcher;
 
 	auto flags = fn->FunctionFlags;
 

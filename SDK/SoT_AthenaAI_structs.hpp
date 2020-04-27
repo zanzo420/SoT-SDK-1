@@ -586,7 +586,7 @@ struct FAthenaAIAbilityDamageStage
 {
 	float                                              HealthPercentageToStartStage;                             // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
-	TArray<class UClass*>                              AbilitiesInStage;                                         // 0x0008(0x0010) (Edit, ZeroConstructor)
+	TArray<class UAthenaAIAbilityStageParams*>         AbilitiesInStage;                                         // 0x0008(0x0010) (Edit, ExportObject, ZeroConstructor)
 };
 
 // ScriptStruct AthenaAI.AthenaAICharacterControllerWeightedAmmoType
@@ -933,6 +933,17 @@ struct FChanceAndBlackboardKeyPair
 {
 	struct FAIDataProviderFloatValue                   Chance;                                                   // 0x0000(0x0030) (Edit)
 	struct FBlackboardKeySelector                      BlackboardKey;                                            // 0x0030(0x0028) (Edit)
+};
+
+// ScriptStruct AthenaAI.ConditionalBasedOnBlackboardKey
+// 0x0038
+struct FConditionalBasedOnBlackboardKey
+{
+	bool                                               UseCondition;                                             // 0x0000(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0001(0x0007) MISSED OFFSET
+	struct FBlackboardKeySelector                      BlackboardKey;                                            // 0x0008(0x0028) (Edit)
+	bool                                               NegateCondition;                                          // 0x0030(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct AthenaAI.WeightedAIStrategyChance

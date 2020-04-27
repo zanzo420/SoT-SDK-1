@@ -40,7 +40,7 @@ public:
 	void Evaluate();
 	void RegisterCharacterEvents_Implementable(struct FObjectMessagingDispatcherHandle* CharacterDispatcher);
 	void OnCurrentShipChanged(const struct FEventCurrentShipChanged& Event);
-	void OnShipDamaged(const struct FEventShipDamaged& Event);
+	void OnShipDamaged(const struct FDamageZoneDamageLevelChanged& Event);
 	void UnregisterCharacterEvents_Implementable(struct FObjectMessagingDispatcherHandle* CharacterDispatcher);
 	void ExecuteUbergraph_BP_Prompt_RepairShip(int EntryPoint);
 };

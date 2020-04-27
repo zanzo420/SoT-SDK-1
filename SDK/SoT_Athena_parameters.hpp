@@ -1021,6 +1021,32 @@ struct AAllianceService_OnRep_CrewAllianceJoinStatuses_Params
 {
 };
 
+// Function Athena.AlwaysRelevantLightweightActor.OnRep_OwningActor
+struct AAlwaysRelevantLightweightActor_OnRep_OwningActor_Params
+{
+};
+
+// Function Athena.AlwaysRelevantLightweightActor.OnOwningActorDestroyed
+struct AAlwaysRelevantLightweightActor_OnOwningActorDestroyed_Params
+{
+};
+
+// Function Athena.NameplateComponent.GetWorldPosition
+struct UNameplateComponent_GetWorldPosition_Params
+{
+	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Athena.AlwaysRelevantLightweightPlayerNameplate.OnRep_PlayerStatePtr
+struct AAlwaysRelevantLightweightPlayerNameplate_OnRep_PlayerStatePtr_Params
+{
+};
+
+// Function Athena.AlwaysRelevantLightweightPlayerNameplate.OnOwningActorDestroyed
+struct AAlwaysRelevantLightweightPlayerNameplate_OnOwningActorDestroyed_Params
+{
+};
+
 // Function Athena.InteractableObject.ServerInteract
 struct AInteractableObject_ServerInteract_Params
 {
@@ -1197,6 +1223,13 @@ struct UAthenaAnimationLocomotionComponentFunctions_GetIsUnderwaterSwimming_Para
 
 // Function Athena.AthenaAnimationLocomotionComponentFunctions.GetIsSwimming
 struct UAthenaAnimationLocomotionComponentFunctions_GetIsSwimming_Params
+{
+	struct FAthenaAnimationLocomotion                  Locomotion;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Athena.AthenaAnimationLocomotionComponentFunctions.GetIsInAITurn
+struct UAthenaAnimationLocomotionComponentFunctions_GetIsInAITurn_Params
 {
 	struct FAthenaAnimationLocomotion                  Locomotion;                                               // (ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -2665,6 +2698,11 @@ struct AAthenaPlayerState_OnRep_PlayerIndexOnServer_Params
 {
 };
 
+// Function Athena.AthenaPlayerState.OnRep_PlayerActivity
+struct AAthenaPlayerState_OnRep_PlayerActivity_Params
+{
+};
+
 // Function Athena.AthenaPlayerState.OnRep_PirateDescription
 struct AAthenaPlayerState_OnRep_PirateDescription_Params
 {
@@ -2674,6 +2712,12 @@ struct AAthenaPlayerState_OnRep_PirateDescription_Params
 struct AAthenaPlayerState_GetUniquePlayerId_Params
 {
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm)
+};
+
+// Function Athena.AthenaPlayerState.GetPlayerActivity
+struct AAthenaPlayerState_GetPlayerActivity_Params
+{
+	TEnumAsByte<EPlayerActivityType>                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Athena.AthenaPlayerState.GetPirateDesc
@@ -2848,11 +2892,6 @@ struct AAthenaPlayerController_Server_ReportPlayerDelta_Params
 struct AAthenaPlayerController_Server_ExecuteCommand_Params
 {
 	struct FString                                     Command;                                                  // (Parm, ZeroConstructor)
-};
-
-// Function Athena.AthenaPlayerController.OnRep_EmissaryLevel
-struct AAthenaPlayerController_OnRep_EmissaryLevel_Params
-{
 };
 
 // Function Athena.AthenaPlayerController.GetPlayerStreamingReferenceLocation
@@ -3233,10 +3272,27 @@ struct ABeacon_Server_OnBeaconLit_Params
 // Function Athena.Beacon.OnRep_OnBeaconDataChanged
 struct ABeacon_OnRep_OnBeaconDataChanged_Params
 {
+	struct FBeaconData                                 OldData;                                                  // (Parm)
+};
+
+// Function Athena.Beacon.IsLit
+struct ABeacon_IsLit_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Athena.Beacon.ExtinguishFlame
 struct ABeacon_ExtinguishFlame_Params
+{
+};
+
+// Function Athena.Beacon.Client_OnBeaconLit
+struct ABeacon_Client_OnBeaconLit_Params
+{
+};
+
+// Function Athena.Beacon.Client_OnBeaconExtinguished
+struct ABeacon_Client_OnBeaconExtinguished_Params
 {
 };
 
@@ -3533,24 +3589,6 @@ struct UBodyLightControllerComponent_GetTargetLight_Params
 struct UBodyLightControllerComponent_AssignTargetLight_Params
 {
 	class UAmbientLightSourceComponent*                InTargetLight;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function Athena.BoxedRpcDispatcherComponent.Server_SendRpc
-struct UBoxedRpcDispatcherComponent_Server_SendRpc_Params
-{
-	struct FSerialisedRpc                              Event;                                                    // (ConstParm, Parm, ReferenceParm)
-};
-
-// Function Athena.BoxedRpcDispatcherComponent.NetMulticastExcludeServer_SendRpc
-struct UBoxedRpcDispatcherComponent_NetMulticastExcludeServer_SendRpc_Params
-{
-	struct FSerialisedRpc                              Event;                                                    // (ConstParm, Parm, ReferenceParm)
-};
-
-// Function Athena.BoxedRpcDispatcherComponent.Client_SendRpc
-struct UBoxedRpcDispatcherComponent_Client_SendRpc_Params
-{
-	struct FSerialisedRpc                              Event;                                                    // (ConstParm, Parm, ReferenceParm)
 };
 
 // Function Athena.BTService_DetermineRecoveryMethod.OnDamageTaken
@@ -5803,8 +5841,8 @@ struct ACutSceneActor_OnRep_TargetActor_Params
 {
 };
 
-// Function Athena.CutSceneActor.OnRep_IsAnimationPlaying
-struct ACutSceneActor_OnRep_IsAnimationPlaying_Params
+// Function Athena.CutSceneActor.OnRep_CutsceneActivated
+struct ACutSceneActor_OnRep_CutsceneActivated_Params
 {
 };
 
@@ -10743,12 +10781,6 @@ struct APlayerLoadingInteractionPoint_Server_NotifyInteractionPointUsed_Params
 	class AActor*                                      UsingActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Athena.NameplateComponent.GetWorldPosition
-struct UNameplateComponent_GetWorldPosition_Params
-{
-	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function Athena.PlayerNonVerbalComponent.Server_SendText
 struct UPlayerNonVerbalComponent_Server_SendText_Params
 {
@@ -10872,24 +10904,6 @@ struct UPlayerWalletComponent_OnRep_BalanceUpdated_Params
 {
 };
 
-// Function Athena.PlayModeHelpers.SetPlayModeOverride
-struct UPlayModeHelpers_SetPlayModeOverride_Params
-{
-	TEnumAsByte<EPlayMode>                             NewPlayModeOverride;                                      // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Athena.PlayModeHelpers.GetPlayMode
-struct UPlayModeHelpers_GetPlayMode_Params
-{
-	class UObject*                                     WorldContext;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EPlayMode>                             ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Athena.PlayModeHelpers.ClearPlayModeOverride
-struct UPlayModeHelpers_ClearPlayModeOverride_Params
-{
-};
-
 // Function Athena.AnimatedMechanismAction.OnRep_State
 struct AAnimatedMechanismAction_OnRep_State_Params
 {
@@ -10909,6 +10923,20 @@ struct AAnimatedMechanismAction_OnMechanismActionStateChanged_Params
 struct AAnimatedMechanismAction_OnMechanismActionReset_Params
 {
 	TScriptInterface<class UMechanismResetInterface>   Action;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.AnimatedMechanismAction.OnLastActorLeftSimpleCollisionShape
+struct AAnimatedMechanismAction_OnLastActorLeftSimpleCollisionShape_Params
+{
+	class AActor*                                      OtherActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         OtherComp;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function Athena.AnimatedMechanismAction.OnFirstActorEnteredSimpleCollisionShape
+struct AAnimatedMechanismAction_OnFirstActorEnteredSimpleCollisionShape_Params
+{
+	class AActor*                                      OtherActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+	class UPrimitiveComponent*                         OtherComp;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Athena.AnimatedMechanismAction.Blueprint_OnStopped
@@ -14663,14 +14691,6 @@ struct UCharacterInertInterface_ClearInert_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Athena.DeadActionStateId.PushCharacterIntoDeadActionState
-struct UDeadActionStateId_PushCharacterIntoDeadActionState_Params
-{
-	class AActor*                                      Character;                                                // (Parm, ZeroConstructor, IsPlainOldData)
-	struct FDamageInstance                             FinalBlow;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
-	TEnumAsByte<ECharacterDeathType>                   DeathType;                                                // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function Athena.FiredFromActorActionStateId.PushCharacterIntoFiredFromActorActionState
 struct UFiredFromActorActionStateId_PushCharacterIntoFiredFromActorActionState_Params
 {
@@ -14810,22 +14830,6 @@ struct UVFXSpawnerComponent_OnRep_StateChange_Params
 	bool                                               OldState;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
-// Function Athena.ShipDescConversionFunctions.ShipDescToJson
-struct UShipDescConversionFunctions_ShipDescToJson_Params
-{
-	struct FShipDesc                                   ShipDesc;                                                 // (ConstParm, Parm, OutParm, ReferenceParm)
-	struct FString                                     JsonString;                                               // (Parm, OutParm, ZeroConstructor)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Athena.ShipDescConversionFunctions.ShipDescFromJson
-struct UShipDescConversionFunctions_ShipDescFromJson_Params
-{
-	struct FString                                     JsonString;                                               // (Parm, ZeroConstructor)
-	struct FShipDesc                                   ShipDesc;                                                 // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function Athena.ReplicatedShipPartCustomizationComponent.OnReplicate_PartDesc
 struct UReplicatedShipPartCustomizationComponent_OnReplicate_PartDesc_Params
 {
@@ -14878,6 +14882,79 @@ struct ULoadableItemInterface_CanBeUnloaded_Params
 struct ULoadableItemInterface_CanBeLoaded_Params
 {
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Athena.PhysicsCollisionFunctions.IsWorldSpacePositionInsideVolume
+struct UPhysicsCollisionFunctions_IsWorldSpacePositionInsideVolume_Params
+{
+	class UStaticMeshComponent*                        Volume;                                                   // (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Athena.BuoyancyComponent.Sink
+struct UBuoyancyComponent_Sink_Params
+{
+};
+
+// Function Athena.BuoyancyComponent.ShouldBeStationary
+struct UBuoyancyComponent_ShouldBeStationary_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Athena.BuoyancyComponent.SetEnabled
+struct UBuoyancyComponent_SetEnabled_Params
+{
+	bool                                               InEnabled;                                                // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.BuoyancyComponent.OnRigidBodyWake
+struct UBuoyancyComponent_OnRigidBodyWake_Params
+{
+	struct FName                                       InBoneName;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.BuoyancyComponent.OnRigidBodySleep
+struct UBuoyancyComponent_OnRigidBodySleep_Params
+{
+	struct FName                                       InBoneName;                                               // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.BuoyancyComponent.OnRep_State
+struct UBuoyancyComponent_OnRep_State_Params
+{
+};
+
+// Function Athena.BuoyancyComponent.IsStationary
+struct UBuoyancyComponent_IsStationary_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Athena.BuoyancyComponent.IsSinking
+struct UBuoyancyComponent_IsSinking_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Athena.BuoyancyComponent.IsEnabled
+struct UBuoyancyComponent_IsEnabled_Params
+{
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Athena.InteractObjectActionStateId.PushCharacterIntoInteractObjectActionState
+struct UInteractObjectActionStateId_PushCharacterIntoInteractObjectActionState_Params
+{
+	struct FNetSubObjectPtr                            InteractObject;                                           // (ConstParm, Parm, OutParm, ReferenceParm)
+	class AActor*                                      Character;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.RadialPhrasesAdjusterInterface.GetRadialPhrases
+struct URadialPhrasesAdjusterInterface_GetRadialPhrases_Params
+{
+	class UPhrasesRadialDataAsset*                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Athena.RadialInventoryInterface.ToggleSpecialAmmoSlots
@@ -14972,73 +15049,6 @@ struct URadialManagerCompositeInputHandler_OnRadialX_Params
 {
 	float                                              Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<EInputHandlerResult>                   ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Athena.PhysicsCollisionFunctions.IsWorldSpacePositionInsideVolume
-struct UPhysicsCollisionFunctions_IsWorldSpacePositionInsideVolume_Params
-{
-	class UStaticMeshComponent*                        Volume;                                                   // (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FVector                                     Position;                                                 // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Athena.BuoyancyComponent.Sink
-struct UBuoyancyComponent_Sink_Params
-{
-};
-
-// Function Athena.BuoyancyComponent.ShouldBeStationary
-struct UBuoyancyComponent_ShouldBeStationary_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Athena.BuoyancyComponent.SetEnabled
-struct UBuoyancyComponent_SetEnabled_Params
-{
-	bool                                               InEnabled;                                                // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Athena.BuoyancyComponent.OnRigidBodyWake
-struct UBuoyancyComponent_OnRigidBodyWake_Params
-{
-	struct FName                                       InBoneName;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Athena.BuoyancyComponent.OnRigidBodySleep
-struct UBuoyancyComponent_OnRigidBodySleep_Params
-{
-	struct FName                                       InBoneName;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Athena.BuoyancyComponent.OnRep_State
-struct UBuoyancyComponent_OnRep_State_Params
-{
-};
-
-// Function Athena.BuoyancyComponent.IsStationary
-struct UBuoyancyComponent_IsStationary_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Athena.BuoyancyComponent.IsSinking
-struct UBuoyancyComponent_IsSinking_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Athena.BuoyancyComponent.IsEnabled
-struct UBuoyancyComponent_IsEnabled_Params
-{
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Athena.InteractObjectActionStateId.PushCharacterIntoInteractObjectActionState
-struct UInteractObjectActionStateId_PushCharacterIntoInteractObjectActionState_Params
-{
-	struct FNetSubObjectPtr                            InteractObject;                                           // (ConstParm, Parm, OutParm, ReferenceParm)
-	class AActor*                                      Character;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Athena.WaterHeightProviderInterface.HasValidWaterHeight
@@ -15442,12 +15452,6 @@ struct UOneShotUsable_CanTrigger_Params
 {
 	class AActor*                                      InTriggeringActor;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Athena.RadialPhrasesAdjusterInterface.GetRadialPhrases
-struct URadialPhrasesAdjusterInterface_GetRadialPhrases_Params
-{
-	class UPhrasesRadialDataAsset*                     ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Athena.PickupableInterface.HandleDestroy
@@ -16139,6 +16143,14 @@ struct UControlObjectActionStateId_PushCharacterIntoControlObjectActionState_Par
 	TEnumAsByte<EActionStateMachineTrackId>            TrackId;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
 	class AActor*                                      ControlledObject;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 	class AActor*                                      Character;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.DeadActionStateId.PushCharacterIntoDeadActionState
+struct UDeadActionStateId_PushCharacterIntoDeadActionState_Params
+{
+	class AActor*                                      Character;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FDamageInstance                             FinalBlow;                                                // (ConstParm, Parm, OutParm, ReferenceParm)
+	TEnumAsByte<ECharacterDeathType>                   DeathType;                                                // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Athena.Landmark.TriggerLandmarkReactionForNearbyPlayersExplicitList
@@ -16859,6 +16871,32 @@ struct UMountedWeaponInterface_GetPitch_Params
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
+// Function Athena.LockableInterface.OpenLock
+struct ULockableInterface_OpenLock_Params
+{
+	class AItemInfo*                                   KeyItem;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class USceneComponent*                             SourceAttachParent;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FName                                       SourceAttachSocket;                                       // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	class AActor*                                      ActionSource;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.LockableInterface.Lock
+struct ULockableInterface_Lock_Params
+{
+	TArray<class UClass*>                              Locks;                                                    // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+};
+
+// Function Athena.OpenableItemComponent.Server_RequestOpenState
+struct UOpenableItemComponent_Server_RequestOpenState_Params
+{
+	TEnumAsByte<EOpenableItemState>                    InOpenState;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.OpenableItemComponent.OnRep_OpenState
+struct UOpenableItemComponent_OnRep_OpenState_Params
+{
+};
+
 // Function Athena.SwimmingCreatureMovementComponent.SetSwimmingMode
 struct USwimmingCreatureMovementComponent_SetSwimmingMode_Params
 {
@@ -16932,6 +16970,11 @@ struct ARowingSeat_OnRep_OarInputStates_Params
 	TArray<TEnumAsByte<EOarInputState>>                OldInputStates;                                           // (Parm, ZeroConstructor)
 };
 
+// Function Athena.AggressiveGhostShip.SetShipDeadBP
+struct AAggressiveGhostShip_SetShipDeadBP_Params
+{
+};
+
 // Function Athena.AggressiveGhostShip.SetGhostShipVisibilityBP
 struct AAggressiveGhostShip_SetGhostShipVisibilityBP_Params
 {
@@ -16943,9 +16986,16 @@ struct AAggressiveGhostShip_OnRep_SplineData_Params
 {
 };
 
-// Function Athena.AggressiveGhostShip.OnRep_IsShipVisible
-struct AAggressiveGhostShip_OnRep_IsShipVisible_Params
+// Function Athena.AggressiveGhostShip.OnRep_ShipState
+struct AAggressiveGhostShip_OnRep_ShipState_Params
 {
+};
+
+// Function Athena.AggressiveGhostShip.OnImpactBP
+struct AAggressiveGhostShip_OnImpactBP_Params
+{
+	struct FVector                                     HitLocation;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	struct FVector                                     SurfaceNormal;                                            // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 };
 
 // Function Athena.AggressiveGhostShip.Multicast_FireProjectile
@@ -16956,6 +17006,40 @@ struct AAggressiveGhostShip_Multicast_FireProjectile_Params
 	TEnumAsByte<EAggressiveGhostShipCannonFacingDirection> CannonFacingDirection;                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	int                                                CannonIndex;                                              // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	class UClass*                                      ProjectileClass;                                          // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.ContestZoneService.SelectAndInitialiseContestZone
+struct AContestZoneService_SelectAndInitialiseContestZone_Params
+{
+	struct FName                                       InContestZoneNameToSelect;                                // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+};
+
+// Function Athena.ContestZoneService.OnLevelAddedToWorld
+struct AContestZoneService_OnLevelAddedToWorld_Params
+{
+	class ULevel*                                      InLevel;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+	class UWorld*                                      InWorld;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function Athena.ContestZoneService.ActivateContestZone
+struct AContestZoneService_ActivateContestZone_Params
+{
+};
+
+// Function Athena.StormOffsetComponent.OnRep_UseForwardTimeStep
+struct UStormOffsetComponent_OnRep_UseForwardTimeStep_Params
+{
+};
+
+// Function Athena.WorldMarkerManagerComponent.OnRep_MarkerDataObjects
+struct UWorldMarkerManagerComponent_OnRep_MarkerDataObjects_Params
+{
+	TArray<class UBaseWorldMarker*>                    InOldMarkerDataObjects;                                   // (ConstParm, Parm, ZeroConstructor)
+};
+
+// Function Athena.RomeBeacon.UpdateBeaconParams
+struct ARomeBeacon_UpdateBeaconParams_Params
+{
 };
 
 // Function Athena.FishingFish.Multicast_SetVisible
@@ -17324,16 +17408,16 @@ struct UAnimatedMechanismInterface_GetSecondsSinceAnimationStarted_Params
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Athena.SimpleAnimatedMechanismAction.CalculateAnimationDuration
-struct ASimpleAnimatedMechanismAction_CalculateAnimationDuration_Params
-{
-	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
 // Function Athena.MechanismInteractionInterface.AddComplexCollisionShape
 struct UMechanismInteractionInterface_AddComplexCollisionShape_Params
 {
 	class UPrimitiveComponent*                         InCollisionShape;                                         // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+};
+
+// Function Athena.SimpleAnimatedMechanismAction.CalculateAnimationDuration
+struct ASimpleAnimatedMechanismAction_CalculateAnimationDuration_Params
+{
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Athena.MechanismInteractionComponent.OnRadiusCollisionEndOverlap
@@ -17378,20 +17462,6 @@ struct UMechanismInteractionComponent_AddComplexCollisionShape_Params
 	class UPrimitiveComponent*                         InCollisionShape;                                         // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
-// Function Athena.SpikeMechanismAction.OnLastActorLeftSimpleCollisionShape
-struct ASpikeMechanismAction_OnLastActorLeftSimpleCollisionShape_Params
-{
-	class AActor*                                      OtherActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         OtherComp;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function Athena.SpikeMechanismAction.OnFirstActorEnteredSimpleCollisionShape
-struct ASpikeMechanismAction_OnFirstActorEnteredSimpleCollisionShape_Params
-{
-	class AActor*                                      OtherActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         OtherComp;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
 // Function Athena.SpikeMechanismAction.OnComplexCollisionShapeBeginOverlap
 struct ASpikeMechanismAction_OnComplexCollisionShapeBeginOverlap_Params
 {
@@ -17408,20 +17478,6 @@ struct ASpikeMechanismAction_Blueprint_PreInitializeAnimationState_Params
 struct ASpikeMechanismAction_AddMaterialAnimatedMesh_Params
 {
 	class UMeshComponent*                              AnimatedMesh;                                             // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function Athena.SwingMechanismAction.OnLastActorLeftSimpleCollisionShape
-struct ASwingMechanismAction_OnLastActorLeftSimpleCollisionShape_Params
-{
-	class AActor*                                      OtherActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         OtherComp;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
-// Function Athena.SwingMechanismAction.OnFirstActorEnteredSimpleCollisionShape
-struct ASwingMechanismAction_OnFirstActorEnteredSimpleCollisionShape_Params
-{
-	class AActor*                                      OtherActor;                                               // (Parm, ZeroConstructor, IsPlainOldData)
-	class UPrimitiveComponent*                         OtherComp;                                                // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // Function Athena.SwingMechanismAction.OnComplexCollisionShapeBeginOverlap
@@ -17449,6 +17505,16 @@ struct ABaseContinuousAnimatedMechanismAction_Blueprint_OnMechanismReachedMinimu
 
 // Function Athena.BaseContinuousAnimatedMechanismAction.Blueprint_OnMechanismReachedMaximum
 struct ABaseContinuousAnimatedMechanismAction_Blueprint_OnMechanismReachedMaximum_Params
+{
+};
+
+// Function Athena.BaseContinuousAnimatedMechanismAction.Blueprint_OnMechanismMovedAwayFromMinimum
+struct ABaseContinuousAnimatedMechanismAction_Blueprint_OnMechanismMovedAwayFromMinimum_Params
+{
+};
+
+// Function Athena.BaseContinuousAnimatedMechanismAction.Blueprint_OnMechanismMovedAwayFromMaximum
+struct ABaseContinuousAnimatedMechanismAction_Blueprint_OnMechanismMovedAwayFromMaximum_Params
 {
 };
 
@@ -17708,38 +17774,6 @@ struct AVolumeMechanismTrigger_OnTriggerVolumeBeginOverlap_Params
 	struct FHitResult                                  SweepResult;                                              // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
-// Function Athena.WorldMarkerManagerComponent.OnRep_MarkerPositions
-struct UWorldMarkerManagerComponent_OnRep_MarkerPositions_Params
-{
-	TArray<struct FWorldMarkerInstanceDesc>            OldPositions;                                             // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-};
-
-// Function Athena.LockableInterface.OpenLock
-struct ULockableInterface_OpenLock_Params
-{
-	class AItemInfo*                                   KeyItem;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class USceneComponent*                             SourceAttachParent;                                       // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FName                                       SourceAttachSocket;                                       // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-	class AActor*                                      ActionSource;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Athena.LockableInterface.Lock
-struct ULockableInterface_Lock_Params
-{
-	TArray<class UClass*>                              Locks;                                                    // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
-};
-
-// Function Athena.OpenableItemComponent.Server_RequestOpenState
-struct UOpenableItemComponent_Server_RequestOpenState_Params
-{
-	TEnumAsByte<EOpenableItemState>                    InOpenState;                                              // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Athena.OpenableItemComponent.OnRep_OpenState
-struct UOpenableItemComponent_OnRep_OpenState_Params
-{
-};
-
 // Function Athena.LayerInContainerComponent.OnRep_CanTake
 struct ULayerInContainerComponent_OnRep_CanTake_Params
 {
@@ -17770,29 +17804,6 @@ struct ACampfire_OnRep_Built_Params
 struct ACampfire_Multicast_CampfireTransientStateChanged_Params
 {
 	TEnumAsByte<ETransientCampfireStateChange>         StateChange;                                              // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Athena.ContestZoneService.SelectAndInitialiseContestZone
-struct AContestZoneService_SelectAndInitialiseContestZone_Params
-{
-	struct FName                                       InContestZoneNameToSelect;                                // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-};
-
-// Function Athena.ContestZoneService.OnLevelAddedToWorld
-struct AContestZoneService_OnLevelAddedToWorld_Params
-{
-	class ULevel*                                      InLevel;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-	class UWorld*                                      InWorld;                                                  // (Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function Athena.ContestZoneService.ActivateContestZone
-struct AContestZoneService_ActivateContestZone_Params
-{
-};
-
-// Function Athena.StormOffsetComponent.OnRep_UseForwardTimeStep
-struct UStormOffsetComponent_OnRep_UseForwardTimeStep_Params
-{
 };
 
 // Function Athena.SailAngleInterface.GetSailTurnRate
@@ -17845,6 +17856,12 @@ struct UShantyInterface_GetNumberOfInstrumentsPlayingOnEnsemble_Params
 {
 	int                                                EnsembleIndex;                                            // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Athena.ShantySelectionComponent.SetShanty_Server
+struct UShantySelectionComponent_SetShanty_Server_Params
+{
+	class UShantyItemDesc*                             InShanty;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function Athena.ProjectileCooldownService.SetValidationEnabled

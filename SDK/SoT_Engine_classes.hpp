@@ -7921,7 +7921,7 @@ public:
 
 
 // Class Engine.StaticMesh
-// 0x0110 (0x0138 - 0x0028)
+// 0x0118 (0x0140 - 0x0028)
 class UStaticMesh : public UObject
 {
 public:
@@ -7949,9 +7949,11 @@ public:
 	TArray<struct FString>                             SourceMaterials;                                          // 0x0108(0x0010) (ZeroConstructor)
 	bool                                               bEnableAutomaticInstancing;                               // 0x0118(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData06[0x3];                                       // 0x0119(0x0003) MISSED OFFSET
-	int                                                ElementToIgnoreForTexFactor;                              // 0x011C(0x0004) (ZeroConstructor, IsPlainOldData)
-	TArray<class UAssetUserData*>                      AssetUserData;                                            // 0x0120(0x0010) (Edit, ExportObject, ZeroConstructor)
-	class UNavCollision*                               NavCollision;                                             // 0x0130(0x0008) (Edit, ExportObject, ZeroConstructor, Transient, EditConst, InstancedReference, DuplicateTransient, IsPlainOldData)
+	int                                                UVsForStreaming;                                          // 0x011C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                ElementToIgnoreForTexFactor;                              // 0x0120(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData07[0x4];                                       // 0x0124(0x0004) MISSED OFFSET
+	TArray<class UAssetUserData*>                      AssetUserData;                                            // 0x0128(0x0010) (Edit, ExportObject, ZeroConstructor)
+	class UNavCollision*                               NavCollision;                                             // 0x0138(0x0008) (Edit, ExportObject, ZeroConstructor, Transient, EditConst, InstancedReference, DuplicateTransient, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -10819,6 +10821,7 @@ public:
 	void K2_DrawBox(const struct FVector2D& ScreenPosition, const struct FVector2D& ScreenSize, float Thickness);
 	void K2_DrawBorder(class UTexture* BorderTexture, class UTexture* BackgroundTexture, class UTexture* LeftBorderTexture, class UTexture* RightBorderTexture, class UTexture* TopBorderTexture, class UTexture* BottomBorderTexture, const struct FVector2D& ScreenPosition, const struct FVector2D& ScreenSize, const struct FVector2D& CoordinatePosition, const struct FVector2D& CoordinateSize, const struct FLinearColor& RenderColor, const struct FVector2D& BorderScale, const struct FVector2D& BackgroundScale, float Rotation, const struct FVector2D& PivotPoint, const struct FVector2D& CornerSize);
 	void K2_Deproject(const struct FVector2D& ScreenPosition, struct FVector* WorldOrigin, struct FVector* WorldDirection);
+	void DrawTextures(TArray<struct FTextureRenderData> RenderDatas);
 };
 
 
@@ -16530,6 +16533,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class Engine.DemoNetDriver");
+		return ptr;
+	}
+
+};
+
+
+// Class Engine.NetPhysicsInterpolatorInterface
+// 0x0000 (0x0028 - 0x0028)
+class UNetPhysicsInterpolatorInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Engine.NetPhysicsInterpolatorInterface");
 		return ptr;
 	}
 

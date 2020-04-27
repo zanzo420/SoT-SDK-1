@@ -496,6 +496,24 @@ public:
 };
 
 
+// Class Animation.CosmeticItemActor
+// 0x00B0 (0x04C0 - 0x0410)
+class ACosmeticItemActor : public AActor
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0410(0x0008) MISSED OFFSET
+	class USkeletalMeshComponent*                      MeshComponent;                                            // 0x0418(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xA0];                                      // 0x0420(0x00A0) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Animation.CosmeticItemActor");
+		return ptr;
+	}
+
+};
+
+
 // Class Animation.CosmeticItemAnimationInterface
 // 0x0000 (0x0028 - 0x0028)
 class UCosmeticItemAnimationInterface : public UInterface

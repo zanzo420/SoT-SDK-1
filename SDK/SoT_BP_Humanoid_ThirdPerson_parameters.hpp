@@ -318,11 +318,6 @@ struct UBP_Humanoid_ThirdPerson_C_EvaluateGraphExposedInputs_ExecuteUbergraph_BP
 {
 };
 
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Humanoid_ThirdPerson_AnimGraphNode_TransitionResult_197566794A0B03578792148F367721EC
-struct UBP_Humanoid_ThirdPerson_C_EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Humanoid_ThirdPerson_AnimGraphNode_TransitionResult_197566794A0B03578792148F367721EC_Params
-{
-};
-
 // Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Humanoid_ThirdPerson_AnimGraphNode_TransitionResult_5D434BCA4928B253E7E70FAC478291AF
 struct UBP_Humanoid_ThirdPerson_C_EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Humanoid_ThirdPerson_AnimGraphNode_TransitionResult_5D434BCA4928B253E7E70FAC478291AF_Params
 {
@@ -2810,16 +2805,6 @@ struct UBP_Humanoid_ThirdPerson_C_AnimNotify_GenerateNewRandomSeed_Params
 {
 };
 
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_AllocateCorrectFleeAnimSet
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_AllocateCorrectFleeAnimSet_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SelectAIFleeVariant
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_SelectAIFleeVariant_Params
-{
-};
-
 // Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SelectPitchOverrideVariant
 struct UBP_Humanoid_ThirdPerson_C_AnimNotify_SelectPitchOverrideVariant_Params
 {
@@ -2949,56 +2934,6 @@ struct UBP_Humanoid_ThirdPerson_C_OnImpact_Params
 	struct FVector*                                    ImpactNormal;                                             // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 	struct FVector*                                    ImpactVelocity;                                           // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 	TEnumAsByte<ECharacterHitReactionAnimType>*        HitReactionAnimType;                                      // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAICheer_B
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_NewAICheer_B_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAICheer_A
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_NewAICheer_A_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAITaunt_B
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_NewAITaunt_B_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_NewAITaunt_A
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_NewAITaunt_A_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_ResetRamImpact
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_ResetRamImpact_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SetSkelCaptIdleB
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_SetSkelCaptIdleB_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_SetSkelCaptIdleA
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_SetSkelCaptIdleA_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_ResetShipCaptainState
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_ResetShipCaptainState_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_StartleEnd
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_StartleEnd_Params
-{
-};
-
-// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_UpdateFleeAnimation
-struct UBP_Humanoid_ThirdPerson_C_AnimNotify_UpdateFleeAnimation_Params
-{
 };
 
 // Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_MapTableVariant
@@ -3243,6 +3178,11 @@ struct UBP_Humanoid_ThirdPerson_C_AnimNotify_ResetAlternate_Params
 
 // Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_CheckAlternate
 struct UBP_Humanoid_ThirdPerson_C_AnimNotify_CheckAlternate_Params
+{
+};
+
+// Function BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C.AnimNotify_BeckonStart
+struct UBP_Humanoid_ThirdPerson_C_AnimNotify_BeckonStart_Params
 {
 };
 

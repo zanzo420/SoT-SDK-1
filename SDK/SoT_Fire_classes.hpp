@@ -30,6 +30,8 @@ public:
 
 	void OnRep_OnFire();
 	void Multicast_NotifyExtinguished_RPC(const struct FVector& InExtinguishLocationWS);
+	void IncrementFireSource();
+	void DecrementFireSource();
 };
 
 
@@ -125,6 +127,9 @@ public:
 		return ptr;
 	}
 
+
+	void IncrementFireSource();
+	void DecrementFireSource();
 };
 
 
