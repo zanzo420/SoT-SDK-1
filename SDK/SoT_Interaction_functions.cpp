@@ -468,27 +468,6 @@ bool UInteractableInterface::ShouldDrawTooltipInWorldSpace(class AActor* InInter
 }
 
 
-// Function Interaction.InteractableInterface.SetInteractionState
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TEnumAsByte<EInteractableState> InNewInteractableState         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-
-void UInteractableInterface::SetInteractionState(TEnumAsByte<EInteractableState> InNewInteractableState)
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Interaction.InteractableInterface.SetInteractionState");
-
-	UInteractableInterface_SetInteractionState_Params params;
-	params.InNewInteractableState = InNewInteractableState;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function Interaction.InteractableInterface.IsInteractableDisabled
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -731,28 +710,6 @@ bool UInteractableInterface::CanInteractWithNotificationInputId(class AActor* In
 	UInteractableInterface_CanInteractWithNotificationInputId_Params params;
 	params.InInteractor = InInteractor;
 	params.NotificationInputId = NotificationInputId;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
-// Function Interaction.InteractableInterface.CanInteractionStatesBeSet
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UInteractableInterface::CanInteractionStatesBeSet()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function Interaction.InteractableInterface.CanInteractionStatesBeSet");
-
-	UInteractableInterface_CanInteractionStatesBeSet_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

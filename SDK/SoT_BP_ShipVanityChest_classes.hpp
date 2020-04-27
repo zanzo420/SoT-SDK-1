@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_ShipVanityChest.BP_ShipVanityChest_C
-// 0x0000 (0x0550 - 0x0550)
+// 0x0000 (0x0558 - 0x0558)
 class ABP_ShipVanityChest_C : public APossessionsChest
 {
 public:

@@ -396,17 +396,19 @@ struct FEventPetReactBegun
 };
 
 // ScriptStruct Pets.EventPetReactCancellation
-// 0x0008
+// 0x0010
 struct FEventPetReactCancellation
 {
-	struct FName                                       ReactId;                                                  // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      ReactSource;                                              // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FName                                       ReactId;                                                  // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Pets.EventPetReactRequest
-// 0x0008
+// 0x0010
 struct FEventPetReactRequest
 {
-	struct FName                                       ReactId;                                                  // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      ReactSource;                                              // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FName                                       ReactId;                                                  // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Pets.RespawnPetEvent

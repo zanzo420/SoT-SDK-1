@@ -12,6 +12,27 @@ namespace SDK
 //Classes
 //---------------------------------------------------------------------------
 
+// Class EmotingFramework.EmoteCard
+// 0x0140 (0x0550 - 0x0410)
+class AEmoteCard : public AActor
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0410(0x0008) MISSED OFFSET
+	class UMaterialInstanceDynamic*                    DynamicCardSelectionMaterialInstance;                     // 0x0418(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	class UStaticMeshComponent*                        MeshComponent;                                            // 0x0420(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	struct FName                                       RandomCardParameterName;                                  // 0x0428(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FInt32Range                                 RandomCardParameterRange;                                 // 0x0430(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x110];                                     // 0x0440(0x0110) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class EmotingFramework.EmoteCard");
+		return ptr;
+	}
+
+};
+
+
 // Class EmotingFramework.EmoteCoin
 // 0x0118 (0x0528 - 0x0410)
 class AEmoteCoin : public AActor

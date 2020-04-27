@@ -28,6 +28,67 @@ enum class EReviveState : uint8_t
 //Script Structs
 //---------------------------------------------------------------------------
 
+// ScriptStruct Reviving.ModeSpecificReviveSettings
+// 0x0030
+struct FModeSpecificReviveSettings
+{
+	TEnumAsByte<EPlayMode>                             AssociatedPlaymode;                                       // 0x0000(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
+	float                                              DeathCameraBlackFadeDelay;                                // 0x0004(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              DeathCameraBlackFadeDuration;                             // 0x0008(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              DeathCameraBlackFadeEventClientTimeout;                   // 0x000C(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              DeathCameraBlackFadeEventServerTimeout;                   // 0x0010(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              DelayBeforeEvaporate;                                     // 0x0014(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              EvaporateDuration;                                        // 0x0018(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              DeathCameraStartDelay;                                    // 0x001C(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              ReviveWindowDuration;                                     // 0x0020(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              GhostFadeDuration;                                        // 0x0024(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	class UReviveSettings*                             CachedReviveSettings;                                     // 0x0028(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+};
+
+// ScriptStruct Reviving.ReviveEffectsValues
+// 0x0020
+struct FReviveEffectsValues
+{
+	class UMaterialInstanceDynamic*                    AstralCordPostProcessMID;                                 // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0008(0x0018) MISSED OFFSET
+};
+
+// ScriptStruct Reviving.PlayerInReviveableStateTelemetryEvent
+// 0x0001
+struct FPlayerInReviveableStateTelemetryEvent
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Reviving.PlayerRevivalTelemetryEvent
+// 0x0001
+struct FPlayerRevivalTelemetryEvent
+{
+	bool                                               Success;                                                  // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Reviving.RevivableActionStateParams
+// 0x0018
+struct FRevivableActionStateParams
+{
+	struct FStatus                                     RevivableStatus;                                          // 0x0000(0x0018) (Edit, DisableEditOnInstance)
+};
+
+// ScriptStruct Reviving.EventRevivableRepresentationSpawnCompleted
+// 0x0001
+struct FEventRevivableRepresentationSpawnCompleted
+{
+	bool                                               FromSwimming;                                             // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Reviving.EventRevivableRepresentationSpawnStarted
+// 0x0001
+struct FEventRevivableRepresentationSpawnStarted
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
 // ScriptStruct Reviving.ReviveableActionStateConstructionInfo
 // 0x0038 (0x0068 - 0x0030)
 struct FReviveableActionStateConstructionInfo : public FActorActionStateConstructionInfo
@@ -37,13 +98,6 @@ struct FReviveableActionStateConstructionInfo : public FActorActionStateConstruc
 	TEnumAsByte<ECharacterDeathType>                   CharacterDeathType;                                       // 0x0060(0x0001) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ECharacterType>                        CharacterType;                                            // 0x0061(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x6];                                       // 0x0062(0x0006) MISSED OFFSET
-};
-
-// ScriptStruct Reviving.EventReviveableRepresentationSpawnCompleted
-// 0x0001
-struct FEventReviveableRepresentationSpawnCompleted
-{
-	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct Reviving.RevivedActionStateConstructionInfo
@@ -60,6 +114,13 @@ struct FRevivedActionStateParams
 	float                                              HealthRegained;                                           // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              ReviveDuration;                                           // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	class UWwiseEvent*                                 ReviveGaspAudio;                                          // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Reviving.ReviveableActionStateStarted
+// 0x0001
+struct FReviveableActionStateStarted
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct Reviving.EventCharacterDiedDuringReviving
@@ -90,9 +151,44 @@ struct FEventCharacterFullyRevived
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
+// ScriptStruct Reviving.ReviveEndedEarlyEvent
+// 0x0001
+struct FReviveEndedEarlyEvent
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Reviving.EventRevivableRepresentationReturnedToBody
+// 0x0001
+struct FEventRevivableRepresentationReturnedToBody
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
 // ScriptStruct Reviving.SuccessfulReviveEvent
 // 0x0001
 struct FSuccessfulReviveEvent
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Reviving.BeingRevivedStoppedEvent
+// 0x0001
+struct FBeingRevivedStoppedEvent
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Reviving.BeingRevivedStartedEvent
+// 0x0001
+struct FBeingRevivedStartedEvent
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Reviving.RevivableCharacterGhostlyBodyEvaporateStarted
+// 0x0001
+struct FRevivableCharacterGhostlyBodyEvaporateStarted
 {
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
@@ -105,12 +201,13 @@ struct FRevivingWindowEnd
 };
 
 // ScriptStruct Reviving.RevivingWindowStart
-// 0x0030
+// 0x0038
 struct FRevivingWindowStart
 {
 	struct FDamageInstance                             DamageInstance;                                           // 0x0000(0x0028)
 	TEnumAsByte<ECharacterDeathType>                   CharacterDeathType;                                       // 0x0028(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0029(0x0007) MISSED OFFSET
+	class ACharacter*                                  RevivableCharacter;                                       // 0x0030(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Reviving.RevivePlayerActionStateConstructionInfo

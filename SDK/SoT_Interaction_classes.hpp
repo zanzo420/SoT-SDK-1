@@ -147,7 +147,6 @@ public:
 
 
 	bool ShouldDrawTooltipInWorldSpace(class AActor* InInteractor, struct FVector* DesiredTooltipWorldPosition);
-	void SetInteractionState(TEnumAsByte<EInteractableState> InNewInteractableState);
 	bool IsInteractableDisabled();
 	void Interact(class AActor* InInteractor, class UClass* NotificationInputId);
 	TEnumAsByte<EInteractableState> GetInteractionState();
@@ -159,8 +158,22 @@ public:
 	bool DoesRequireNotBeingAirborne();
 	bool DoesRequireFacingFront();
 	bool CanInteractWithNotificationInputId(class AActor* InInteractor, class UClass* NotificationInputId);
-	bool CanInteractionStatesBeSet();
 	bool CanInteract(class AActor* InInteractor);
+};
+
+
+// Class Interaction.InteractableIdentifierInterface
+// 0x0000 (0x0028 - 0x0028)
+class UInteractableIdentifierInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Interaction.InteractableIdentifierInterface");
+		return ptr;
+	}
+
 };
 
 

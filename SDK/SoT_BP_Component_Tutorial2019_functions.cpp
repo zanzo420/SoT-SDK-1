@@ -259,16 +259,16 @@ void UBP_Component_Tutorial2019_C::ForceDisableComponent_Blueprint()
 // Function BP_Component_Tutorial2019.BP_Component_Tutorial2019_C.Set Prompts Visibility
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                           IsHIdden                       (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsHidden                       (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReEvaluate                     (Parm, ZeroConstructor, IsPlainOldData)
 // float                          Delay_In_Seconds               (Parm, ZeroConstructor, IsPlainOldData)
 
-void UBP_Component_Tutorial2019_C::Set_Prompts_Visibility(bool IsHIdden, bool ReEvaluate, float Delay_In_Seconds)
+void UBP_Component_Tutorial2019_C::Set_Prompts_Visibility(bool IsHidden, bool ReEvaluate, float Delay_In_Seconds)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function BP_Component_Tutorial2019.BP_Component_Tutorial2019_C.Set Prompts Visibility");
 
 	UBP_Component_Tutorial2019_C_Set_Prompts_Visibility_Params params;
-	params.IsHIdden = IsHIdden;
+	params.IsHidden = IsHidden;
 	params.ReEvaluate = ReEvaluate;
 	params.Delay_In_Seconds = Delay_In_Seconds;
 

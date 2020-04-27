@@ -40150,6 +40150,30 @@ void UKismetMathLibrary::STATIC_GetYawPitchFromVector(const struct FVector& InVe
 }
 
 
+// Function Engine.KismetMathLibrary.GetYawFromVector
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FVector                 InVec                          (Parm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UKismetMathLibrary::STATIC_GetYawFromVector(const struct FVector& InVec)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Engine.KismetMathLibrary.GetYawFromVector");
+
+	UKismetMathLibrary_GetYawFromVector_Params params;
+	params.InVec = InVec;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
 // Function Engine.KismetMathLibrary.GetVectorArrayAverage
 // (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:

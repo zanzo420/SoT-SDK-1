@@ -93,6 +93,27 @@ void ADrawDebugService::Multicast_AddSpheres(TArray<struct FDrawDebugItemSphere>
 }
 
 
+// Function AthenaDebug.DrawDebugService.Multicast_AddSectors
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// TArray<struct FDrawDebugItemSector> Sectors                        (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+
+void ADrawDebugService::Multicast_AddSectors(TArray<struct FDrawDebugItemSector> Sectors)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaDebug.DrawDebugService.Multicast_AddSectors");
+
+	ADrawDebugService_Multicast_AddSectors_Params params;
+	params.Sectors = Sectors;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaDebug.DrawDebugService.Multicast_AddLines
 // (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
 // Parameters:

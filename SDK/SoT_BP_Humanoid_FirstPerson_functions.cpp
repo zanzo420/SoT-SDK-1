@@ -7830,6 +7830,23 @@ void UBP_Humanoid_FirstPerson_C::AnimNotify_EndCutscene()
 }
 
 
+// Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_WakeUpFirstPerson
+// (BlueprintCallable, BlueprintEvent)
+
+void UBP_Humanoid_FirstPerson_C::AnimNotify_WakeUpFirstPerson()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_WakeUpFirstPerson");
+
+	UBP_Humanoid_FirstPerson_C_AnimNotify_WakeUpFirstPerson_Params params;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_ExitIdle
 // (BlueprintCallable, BlueprintEvent)
 
@@ -7957,40 +7974,6 @@ void UBP_Humanoid_FirstPerson_C::AnimNotify_CastFailEnd()
 	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_CastFailEnd");
 
 	UBP_Humanoid_FirstPerson_C_AnimNotify_CastFailEnd_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_ResetAlternate
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_FirstPerson_C::AnimNotify_ResetAlternate()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_ResetAlternate");
-
-	UBP_Humanoid_FirstPerson_C_AnimNotify_ResetAlternate_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
-// Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_CheckAlternate
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_Humanoid_FirstPerson_C::AnimNotify_CheckAlternate()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_CheckAlternate");
-
-	UBP_Humanoid_FirstPerson_C_AnimNotify_CheckAlternate_Params params;
 
 	auto flags = fn->FunctionFlags;
 

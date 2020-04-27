@@ -1383,6 +1383,27 @@ void AAthenaAICharacterController::SetItemSpecificNamedControllerParam(class UCl
 }
 
 
+// Function AthenaAI.AthenaAICharacterController.SetDisableTurningForTest
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           InDisableTurningForTest        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void AAthenaAICharacterController::SetDisableTurningForTest(bool InDisableTurningForTest)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaAI.AthenaAICharacterController.SetDisableTurningForTest");
+
+	AAthenaAICharacterController_SetDisableTurningForTest_Params params;
+	params.InDisableTurningForTest = InDisableTurningForTest;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaAI.AthenaAICharacterController.ClearOverridePrioritiseInteractablesBeforeEnemies
 // (Final, Native, Public, BlueprintCallable)
 
@@ -1722,15 +1743,13 @@ int UAthenaAIDebugFunctionLibrary::STATIC_GetEnvQueryManagerNumRunningQueries(cl
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaAIController*     AIController                   (Parm, ZeroConstructor, IsPlainOldData)
-// class UAthenaAIControllerParamsDataAsset* ControllerParams               (Parm, ZeroConstructor, IsPlainOldData)
 
-void UAthenaAIDebugFunctionLibrary::STATIC_EnableMaximumSightSettings(class AAthenaAIController* AIController, class UAthenaAIControllerParamsDataAsset* ControllerParams)
+void UAthenaAIDebugFunctionLibrary::STATIC_EnableMaximumSightSettings(class AAthenaAIController* AIController)
 {
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaAI.AthenaAIDebugFunctionLibrary.EnableMaximumSightSettings");
 
 	UAthenaAIDebugFunctionLibrary_EnableMaximumSightSettings_Params params;
 	params.AIController = AIController;
-	params.ControllerParams = ControllerParams;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

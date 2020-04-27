@@ -36,7 +36,6 @@ public:
 
 	void UnregisterDamageEventFromCurrentShip();
 	void RegisterDamageEventWithCurrentShip();
-	void UnregisterOtherEvents_Implementable();
 	void Evaluate();
 	void RegisterCharacterEvents_Implementable(struct FObjectMessagingDispatcherHandle* CharacterDispatcher);
 	void OnCurrentShipChanged(const struct FEventCurrentShipChanged& Event);

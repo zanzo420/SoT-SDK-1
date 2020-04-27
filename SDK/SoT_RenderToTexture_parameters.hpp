@@ -28,6 +28,7 @@ struct URenderToTextureFunctionLibrary_CreateRenderToTexture_Params
 	class UClass*                                      ClassToSpawn;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FIntPoint                                   Resolution;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               bForceLinearGamma;                                        // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               bCaptureAlpha;                                            // (Parm, ZeroConstructor, IsPlainOldData)
 	class URenderToTextureSceneDetails*                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 

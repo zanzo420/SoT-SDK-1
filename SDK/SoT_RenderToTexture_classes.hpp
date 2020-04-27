@@ -26,7 +26,7 @@ public:
 
 
 	class URenderToTextureSceneDetails* STATIC_GetRenderToTexture(const struct FName& Identifier);
-	class URenderToTextureSceneDetails* STATIC_CreateRenderToTexture(const struct FName& Identifier, class UClass* ClassToSpawn, const struct FIntPoint& Resolution, bool bForceLinearGamma);
+	class URenderToTextureSceneDetails* STATIC_CreateRenderToTexture(const struct FName& Identifier, class UClass* ClassToSpawn, const struct FIntPoint& Resolution, bool bForceLinearGamma, bool bCaptureAlpha);
 };
 
 

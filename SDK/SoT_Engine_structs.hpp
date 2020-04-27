@@ -4477,7 +4477,7 @@ struct FAnimLinkableElement
 };
 
 // ScriptStruct Engine.AnimNotifyEvent
-// 0x0078 (0x00A8 - 0x0030)
+// 0x0080 (0x00B0 - 0x0030)
 struct FAnimNotifyEvent : public FAnimLinkableElement
 {
 	float                                              DisplayTime;                                              // 0x0030(0x0004) (ZeroConstructor, Deprecated, IsPlainOldData)
@@ -4487,19 +4487,19 @@ struct FAnimNotifyEvent : public FAnimLinkableElement
 	struct FName                                       NotifyName;                                               // 0x0040(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	class UAnimNotify*                                 Notify;                                                   // 0x0048(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 	class UAnimNotifyState*                            NotifyStateClass;                                         // 0x0050(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	float                                              Duration;                                                 // 0x0058(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x005C(0x0004) MISSED OFFSET
-	struct FAnimLinkableElement                        EndLink;                                                  // 0x0060(0x0030)
-	bool                                               bConvertedFromBranchingPoint;                             // 0x0090(0x0001) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EMontageNotifyTickType>                MontageTickType;                                          // 0x0091(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x2];                                       // 0x0092(0x0002) MISSED OFFSET
-	float                                              NotifyTriggerChance;                                      // 0x0094(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ENotifyFilterType>                     NotifyFilterType;                                         // 0x0098(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x3];                                       // 0x0099(0x0003) MISSED OFFSET
-	int                                                NotifyFilterLOD;                                          // 0x009C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               bTriggerOnDedicatedServer;                                // 0x00A0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x3];                                       // 0x00A1(0x0003) MISSED OFFSET
-	int                                                TrackIndex;                                               // 0x00A4(0x0004) (ZeroConstructor, IsPlainOldData)
+	class UAnimNotifyCondition*                        NotifyCondition;                                          // 0x0058(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	float                                              Duration;                                                 // 0x0060(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0064(0x0004) MISSED OFFSET
+	struct FAnimLinkableElement                        EndLink;                                                  // 0x0068(0x0030)
+	bool                                               bConvertedFromBranchingPoint;                             // 0x0098(0x0001) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EMontageNotifyTickType>                MontageTickType;                                          // 0x0099(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x2];                                       // 0x009A(0x0002) MISSED OFFSET
+	float                                              NotifyTriggerChance;                                      // 0x009C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ENotifyFilterType>                     NotifyFilterType;                                         // 0x00A0(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x3];                                       // 0x00A1(0x0003) MISSED OFFSET
+	int                                                NotifyFilterLOD;                                          // 0x00A4(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	int                                                TrackIndex;                                               // 0x00A8(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x4];                                       // 0x00AC(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Engine.RainPostProcessSettings
@@ -8695,6 +8695,14 @@ struct FNetActorPtr
 	struct FNetObjectPtr                               ObjectPtr;                                                // 0x0000(0x0014)
 };
 
+// ScriptStruct Engine.PacketDiscardStats
+// 0x0020
+struct FPacketDiscardStats
+{
+	int                                                DiscardCounts[0x7];                                       // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+	int                                                BytesDiscarded;                                           // 0x001C(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct Engine.RuntimeVectorCurve
 // 0x0170
 struct FRuntimeVectorCurve
@@ -8708,14 +8716,6 @@ struct FRuntimeVectorCurve
 struct FNetSubObjectPtr
 {
 	struct FNetObjectPtr                               SubObject;                                                // 0x0000(0x0014)
-};
-
-// ScriptStruct Engine.PacketDiscardStats
-// 0x0020
-struct FPacketDiscardStats
-{
-	int                                                DiscardCounts[0x7];                                       // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
-	int                                                BytesDiscarded;                                           // 0x001C(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Engine.ExposedValueCopyRecord

@@ -13,10 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class VoiceGameChat.PlayfabPartyVoiceChannel
-// 0x0000 (0x0090 - 0x0090)
+// 0x0018 (0x00A8 - 0x0090)
 class UPlayfabPartyVoiceChannel : public UVoiceChannel
 {
 public:
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0090(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

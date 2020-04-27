@@ -87,7 +87,7 @@ struct UBP_Component_Tutorial2019_C_ForceDisableComponent_Blueprint_Params
 // Function BP_Component_Tutorial2019.BP_Component_Tutorial2019_C.Set Prompts Visibility
 struct UBP_Component_Tutorial2019_C_Set_Prompts_Visibility_Params
 {
-	bool                                               IsHIdden;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               IsHidden;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReEvaluate;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              Delay_In_Seconds;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };

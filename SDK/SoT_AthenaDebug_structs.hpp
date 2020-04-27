@@ -79,6 +79,24 @@ struct FDrawDebugItemLine
 	float                                              Thickness;                                                // 0x0028(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
+// ScriptStruct AthenaDebug.DrawDebugItemSector
+// 0x0048
+struct FDrawDebugItemSector
+{
+	struct FName                                       GroupName;                                                // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	bool                                               ReplaceInGroup;                                           // 0x0008(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0009(0x0003) MISSED OFFSET
+	float                                              RotationAngle;                                            // 0x000C(0x0004) (ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Centre;                                                   // 0x0010(0x000C) (ZeroConstructor, IsPlainOldData)
+	float                                              SectorAngle;                                              // 0x001C(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              Radius;                                                   // 0x0020(0x0004) (ZeroConstructor, IsPlainOldData)
+	struct FColor                                      Colour;                                                   // 0x0024(0x0004) (ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ZeroAngleVector;                                          // 0x0028(0x000C) (ZeroConstructor, IsPlainOldData)
+	struct FVector                                     RotationAxis;                                             // 0x0034(0x000C) (ZeroConstructor, IsPlainOldData)
+	float                                              SubAngles;                                                // 0x0040(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              Thickness;                                                // 0x0044(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct AthenaDebug.DrawDebugItemString
 // 0x0030
 struct FDrawDebugItemString
