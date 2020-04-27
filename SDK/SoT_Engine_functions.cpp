@@ -6193,7 +6193,7 @@ bool UAnimInstance::IsPlayingSlotAnimation(class UAnimSequenceBase* Asset, const
 
 
 // Function Engine.AnimInstance.GetSyncGroupPosition
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FName                   Name                           (Parm, ZeroConstructor, IsPlainOldData)
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -52605,6 +52605,27 @@ void UCanvas::K2_Deproject(const struct FVector2D& ScreenPosition, struct FVecto
 		*WorldOrigin = params.WorldOrigin;
 	if (WorldDirection != nullptr)
 		*WorldDirection = params.WorldDirection;
+}
+
+
+// Function Engine.Canvas.DrawTextures
+// (Native, Public, HasOutParms)
+// Parameters:
+// TArray<struct FTextureRenderData> RenderDatas                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UCanvas::DrawTextures(TArray<struct FTextureRenderData> RenderDatas)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function Engine.Canvas.DrawTextures");
+
+	UCanvas_DrawTextures_Params params;
+	params.RenderDatas = RenderDatas;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
 }
 
 

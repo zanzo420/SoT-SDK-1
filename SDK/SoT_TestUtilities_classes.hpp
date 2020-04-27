@@ -78,6 +78,22 @@ public:
 };
 
 
+// Class TestUtilities.MockPlayerControllerWithMessagingDispatcher
+// 0x00A8 (0x0810 - 0x0768)
+class AMockPlayerControllerWithMessagingDispatcher : public APlayerController
+{
+public:
+	unsigned char                                      UnknownData00[0xA8];                                      // 0x0768(0x00A8) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class TestUtilities.MockPlayerControllerWithMessagingDispatcher");
+		return ptr;
+	}
+
+};
+
+
 // Class TestUtilities.ObjectCollectorGameState
 // 0x0060 (0x04C8 - 0x0468)
 class AObjectCollectorGameState : public AGameState

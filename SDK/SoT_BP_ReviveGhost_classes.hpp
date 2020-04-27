@@ -13,11 +13,10 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_ReviveGhost.BP_ReviveGhost_C
-// 0x0008 (0x04F8 - 0x04F0)
+// 0x0000 (0x0530 - 0x0530)
 class ABP_ReviveGhost_C : public AReviveGhost
 {
 public:
-	class UMaterialInstanceConstant*                   NewVar_1;                                                 // 0x04F0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -25,8 +24,6 @@ public:
 		return ptr;
 	}
 
-
-	void UserConstructionScript();
 };
 
 

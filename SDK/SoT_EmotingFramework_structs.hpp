@@ -9,6 +9,21 @@
 namespace SDK
 {
 //---------------------------------------------------------------------------
+//Enums
+//---------------------------------------------------------------------------
+
+// Enum EmotingFramework.EEmoteFlourishType
+enum class EEmoteFlourishType : uint8_t
+{
+	Invalid                        = 0,
+	PrimaryWeaponSlotFlourish      = 1,
+	SecondaryWeaponSlotFlourish    = 2,
+	EEmoteFlourishType_MAX         = 3
+};
+
+
+
+//---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
 

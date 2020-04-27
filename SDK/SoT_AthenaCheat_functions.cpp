@@ -916,6 +916,24 @@ void UAthenaCheatManager::TeleportToHideout()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.TeleportToAggressiveGhostShipEncounter
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::TeleportToAggressiveGhostShipEncounter()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.TeleportToAggressiveGhostShipEncounter");
+
+	UAthenaCheatManager_TeleportToAggressiveGhostShipEncounter_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.TeleportShip
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -2069,6 +2087,42 @@ void UAthenaCheatManager::SpawnNumberOfAI(const struct FString& AIDescString, in
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.SpawnNightmareAggressiveGhostShipEncountersRandom
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::SpawnNightmareAggressiveGhostShipEncountersRandom()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.SpawnNightmareAggressiveGhostShipEncountersRandom");
+
+	UAthenaCheatManager_SpawnNightmareAggressiveGhostShipEncountersRandom_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.SpawnNightmareAggressiveGhostShipEncountersNearToPlayer
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::SpawnNightmareAggressiveGhostShipEncountersNearToPlayer()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.SpawnNightmareAggressiveGhostShipEncountersNearToPlayer");
+
+	UAthenaCheatManager_SpawnNightmareAggressiveGhostShipEncountersNearToPlayer_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.SpawnMultipleTreasureChestsOfType
 // (Final, Exec, Native, Public, HasOutParms)
 // Parameters:
@@ -2984,6 +3038,24 @@ void UAthenaCheatManager::ShowAllWelds()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.ShowAllRomeBeacons
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ShowAllRomeBeacons()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.ShowAllRomeBeacons");
+
+	UAthenaCheatManager_ShowAllRomeBeacons_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.ShowAllItemsInRadialInventory
 // (Final, Exec, Native, Public)
 
@@ -3885,6 +3957,27 @@ void UAthenaCheatManager::SetGrogSecondary(bool InValue)
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.SetGodMode
+// (Final, Exec, Native, Public)
+// Parameters:
+// bool                           GodModeOn                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaCheatManager::SetGodMode(bool GodModeOn)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.SetGodMode");
+
+	UAthenaCheatManager_SetGodMode_Params params;
+	params.GodModeOn = GodModeOn;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.SetFOV
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -4516,6 +4609,42 @@ void UAthenaCheatManager::RewindPhysicsSceneBy(float SecondsToRewindBy)
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.ReviveLocalPlayerInstantly
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ReviveLocalPlayerInstantly()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.ReviveLocalPlayerInstantly");
+
+	UAthenaCheatManager_ReviveLocalPlayerInstantly_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.ReviveLocalPlayerAccordingToReviveTime
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ReviveLocalPlayerAccordingToReviveTime()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.ReviveLocalPlayerAccordingToReviveTime");
+
+	UAthenaCheatManager_ReviveLocalPlayerAccordingToReviveTime_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.ResurfaceShipByActorId
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -4527,6 +4656,24 @@ void UAthenaCheatManager::ResurfaceShipByActorId(const struct FString& ShipActor
 
 	UAthenaCheatManager_ResurfaceShipByActorId_Params params;
 	params.ShipActorIdString = ShipActorIdString;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.RestoreAndRestockShipAndPlayer
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::RestoreAndRestockShipAndPlayer()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.RestoreAndRestockShipAndPlayer");
+
+	UAthenaCheatManager_RestoreAndRestockShipAndPlayer_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -5056,6 +5203,27 @@ void UAthenaCheatManager::RemoveAllFog()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.RemoveAISpawnContext
+// (Final, Exec, Native, Public)
+// Parameters:
+// struct FString                 ContextName                    (Parm, ZeroConstructor)
+
+void UAthenaCheatManager::RemoveAISpawnContext(const struct FString& ContextName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.RemoveAISpawnContext");
+
+	UAthenaCheatManager_RemoveAISpawnContext_Params params;
+	params.ContextName = ContextName;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.RebuildPirateFromSeed
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -5206,6 +5374,24 @@ void UAthenaCheatManager::PrintAllNetworkActors()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.PrintAISpawnContexts
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::PrintAISpawnContexts()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.PrintAISpawnContexts");
+
+	UAthenaCheatManager_PrintAISpawnContexts_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.PlayerAnimationOverride
 // (Final, Exec, Native, Public, HasOutParms)
 // Parameters:
@@ -5314,6 +5500,24 @@ void UAthenaCheatManager::MakeSharksBrainDead()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.MakeSharksBrainDead");
 
 	UAthenaCheatManager_MakeSharksBrainDead_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.MakeLocalPlayerRevivable
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::MakeLocalPlayerRevivable()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.MakeLocalPlayerRevivable");
+
+	UAthenaCheatManager_MakeLocalPlayerRevivable_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -6178,6 +6382,24 @@ void UAthenaCheatManager::HideTaleDebug()
 	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.HideTaleDebug");
 
 	UAthenaCheatManager_HideTaleDebug_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.HideAllRomeBeacons
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::HideAllRomeBeacons()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.HideAllRomeBeacons");
+
+	UAthenaCheatManager_HideAllRomeBeacons_Params params;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -8060,6 +8282,24 @@ void UAthenaCheatManager::CreateDebugAISpawner(const struct FString& SpawnerAsse
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.ContextualPromptCountersToggleDebugDraw
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ContextualPromptCountersToggleDebugDraw()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.ContextualPromptCountersToggleDebugDraw");
+
+	UAthenaCheatManager_ContextualPromptCountersToggleDebugDraw_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.CompleteVoyage
 // (Final, Exec, Native, Public)
 
@@ -8627,24 +8867,6 @@ void UAthenaCheatManager::AIPlayerShip()
 }
 
 
-// Function AthenaCheat.AthenaCheatManager.AggressiveGhostShipEncounterGoToNextWave
-// (Final, Exec, Native, Public)
-
-void UAthenaCheatManager::AggressiveGhostShipEncounterGoToNextWave()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.AggressiveGhostShipEncounterGoToNextWave");
-
-	UAthenaCheatManager_AggressiveGhostShipEncounterGoToNextWave_Params params;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function AthenaCheat.AthenaCheatManager.AdjustGhostShader
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -8801,6 +9023,27 @@ void UAthenaCheatManager::AddDrunkenness(int DrunkennessType, float DrunkennessC
 	UAthenaCheatManager_AddDrunkenness_Params params;
 	params.DrunkennessType = DrunkennessType;
 	params.DrunkennessChange = DrunkennessChange;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.AddAISpawnContext
+// (Final, Exec, Native, Public)
+// Parameters:
+// struct FString                 ContextName                    (Parm, ZeroConstructor)
+
+void UAthenaCheatManager::AddAISpawnContext(const struct FString& ContextName)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AthenaCheat.AthenaCheatManager.AddAISpawnContext");
+
+	UAthenaCheatManager_AddAISpawnContext_Params params;
+	params.ContextName = ContextName;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;

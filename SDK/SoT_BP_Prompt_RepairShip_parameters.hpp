@@ -49,7 +49,7 @@ struct UBP_Prompt_RepairShip_C_OnCurrentShipChanged_Params
 // Function BP_Prompt_RepairShip.BP_Prompt_RepairShip_C.OnShipDamaged
 struct UBP_Prompt_RepairShip_C_OnShipDamaged_Params
 {
-	struct FEventShipDamaged                           Event;                                                    // (Parm)
+	struct FDamageZoneDamageLevelChanged               Event;                                                    // (Parm)
 };
 
 // Function BP_Prompt_RepairShip.BP_Prompt_RepairShip_C.UnregisterCharacterEvents_Implementable

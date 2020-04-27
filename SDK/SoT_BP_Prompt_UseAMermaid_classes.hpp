@@ -38,12 +38,14 @@ public:
 	}
 
 
+	void ResetState();
 	struct FPromptEvaluation EvaluatePromptDisplayState();
 	void PostInitialize();
 	void Prompt_MermaidActivatedLocally(const struct FMermaidActivatedLocally& Ev);
 	void Prompt_MermaidDeactivatedLocally(const struct FMermaidDeactivatedLocally& Ev);
 	void Prompt_MermaidUsed(const struct FMermaidUsedEvent& Ev);
 	void UnregisterOtherEvents_Implementable();
+	void RegisterCharacterEvents_Implementable(struct FObjectMessagingDispatcherHandle* CharacterDispatcher);
 	void ExecuteUbergraph_BP_Prompt_UseAMermaid(int EntryPoint);
 };
 

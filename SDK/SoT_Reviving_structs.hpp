@@ -39,9 +39,9 @@ struct FReviveableActionStateConstructionInfo : public FActorActionStateConstruc
 	unsigned char                                      UnknownData00[0x6];                                       // 0x0062(0x0006) MISSED OFFSET
 };
 
-// ScriptStruct Reviving.EventReviveableRepresentationDespawnRequested
+// ScriptStruct Reviving.EventReviveableRepresentationSpawnCompleted
 // 0x0001
-struct FEventReviveableRepresentationDespawnRequested
+struct FEventReviveableRepresentationSpawnCompleted
 {
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
@@ -54,16 +54,12 @@ struct FRevivedActionStateConstructionInfo : public FActorActionStateConstructio
 };
 
 // ScriptStruct Reviving.RevivedActionStateParams
-// 0x0020
+// 0x0010
 struct FRevivedActionStateParams
 {
 	float                                              HealthRegained;                                           // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              PirateAliveShaderInitialAmount;                           // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              PirateAliveShaderTargetAmount;                            // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              PirateAliveShaderDuration;                                // 0x000C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              ReviveDuration;                                           // 0x0010(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
-	class UWwiseEvent*                                 ReviveGaspAudio;                                          // 0x0018(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              ReviveDuration;                                           // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	class UWwiseEvent*                                 ReviveGaspAudio;                                          // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Reviving.EventCharacterDiedDuringReviving
@@ -71,6 +67,20 @@ struct FRevivedActionStateParams
 struct FEventCharacterDiedDuringReviving
 {
 	class ACharacter*                                  OwningCharacter;                                          // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Reviving.EventRevivePlayerActionStateLeft
+// 0x0001
+struct FEventRevivePlayerActionStateLeft
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Reviving.EventRevivePlayerActionStateEntered
+// 0x0001
+struct FEventRevivePlayerActionStateEntered
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct Reviving.EventCharacterFullyRevived

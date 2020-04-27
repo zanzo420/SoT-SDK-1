@@ -14,6 +14,11 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.ResetState
+struct UBP_Prompt_UseAMermaid_C_ResetState_Params
+{
+};
+
 // Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.EvaluatePromptDisplayState
 struct UBP_Prompt_UseAMermaid_C_EvaluatePromptDisplayState_Params
 {
@@ -46,6 +51,12 @@ struct UBP_Prompt_UseAMermaid_C_Prompt_MermaidUsed_Params
 // Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.UnregisterOtherEvents_Implementable
 struct UBP_Prompt_UseAMermaid_C_UnregisterOtherEvents_Implementable_Params
 {
+};
+
+// Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.RegisterCharacterEvents_Implementable
+struct UBP_Prompt_UseAMermaid_C_RegisterCharacterEvents_Implementable_Params
+{
+	struct FObjectMessagingDispatcherHandle*           CharacterDispatcher;                                      // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // Function BP_Prompt_UseAMermaid.BP_Prompt_UseAMermaid_C.ExecuteUbergraph_BP_Prompt_UseAMermaid

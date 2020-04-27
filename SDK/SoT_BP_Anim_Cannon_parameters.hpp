@@ -14,11 +14,6 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function BP_Anim_Cannon.BP_Anim_Cannon_C.EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_Cannon_AnimGraphNode_TransitionResult_D8AE3CC240728DC448411C83C0524A3E
-struct UBP_Anim_Cannon_C_EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_Cannon_AnimGraphNode_TransitionResult_D8AE3CC240728DC448411C83C0524A3E_Params
-{
-};
-
 // Function BP_Anim_Cannon.BP_Anim_Cannon_C.AnimNotify_FireEnd
 struct UBP_Anim_Cannon_C_AnimNotify_FireEnd_Params
 {

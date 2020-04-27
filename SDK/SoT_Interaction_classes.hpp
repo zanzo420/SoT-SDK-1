@@ -50,13 +50,29 @@ public:
 };
 
 
+// Class Interaction.InteractionValidatorSetterInterface
+// 0x0000 (0x0028 - 0x0028)
+class UInteractionValidatorSetterInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Interaction.InteractionValidatorSetterInterface");
+		return ptr;
+	}
+
+};
+
+
 // Class Interaction.CharacterInteractionComponent
-// 0x00C0 (0x0660 - 0x05A0)
+// 0x00D0 (0x0670 - 0x05A0)
 class UCharacterInteractionComponent : public UBoxComponent
 {
 public:
-	class UInteractableArea*                           CurrentOptimalInteractable;                               // 0x05A0(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xB8];                                      // 0x05A8(0x00B8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x05A0(0x0008) MISSED OFFSET
+	class UInteractableArea*                           CurrentOptimalInteractable;                               // 0x05A8(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xC0];                                      // 0x05B0(0x00C0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -181,6 +197,21 @@ public:
 };
 
 
+// Class Interaction.InteractionValidatorOwnerInterface
+// 0x0000 (0x0028 - 0x0028)
+class UInteractionValidatorOwnerInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Interaction.InteractionValidatorOwnerInterface");
+		return ptr;
+	}
+
+};
+
+
 // Class Interaction.InteractorInterface
 // 0x0000 (0x0028 - 0x0028)
 class UInteractorInterface : public UInterface
@@ -197,13 +228,13 @@ public:
 
 
 // Class Interaction.MockActorWithCharacterInteractionComponent
-// 0x00B0 (0x04C0 - 0x0410)
-class AMockActorWithCharacterInteractionComponent : public AActor
+// 0x00B0 (0x06C0 - 0x0610)
+class AMockActorWithCharacterInteractionComponent : public ACharacter
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0410(0x0008) MISSED OFFSET
-	class UCharacterInteractionComponent*              CharacterInteractionComponent;                            // 0x0418(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xA0];                                      // 0x0420(0x00A0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0610(0x0008) MISSED OFFSET
+	class UCharacterInteractionComponent*              CharacterInteractionComponent;                            // 0x0618(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xA0];                                      // 0x0620(0x00A0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -244,6 +275,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class Interaction.MockInteractorActor");
+		return ptr;
+	}
+
+};
+
+
+// Class Interaction.SelfInteractionInterface
+// 0x0000 (0x0028 - 0x0028)
+class USelfInteractionInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Interaction.SelfInteractionInterface");
 		return ptr;
 	}
 

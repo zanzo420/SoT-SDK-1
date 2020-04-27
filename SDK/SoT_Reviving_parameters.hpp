@@ -29,6 +29,7 @@ struct UReviveComponent_HandleOwningCharacterEndPlay_Params
 struct AReviveGhost_SetupGhostMaterials_Params
 {
 	class USkeletalMeshComponent*                      MeshComponent;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class AActor*                                      InReviveableOwner;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

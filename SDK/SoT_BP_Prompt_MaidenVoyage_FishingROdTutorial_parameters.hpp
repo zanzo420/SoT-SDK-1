@@ -14,6 +14,11 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.FullStateReset
+struct UBP_Prompt_MaidenVoyage_FishingRodTutorial_C_FullStateReset_Params
+{
+};
+
 // Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.OnFishEscapingFunc
 struct UBP_Prompt_MaidenVoyage_FishingRodTutorial_C_OnFishEscapingFunc_Params
 {
@@ -80,6 +85,16 @@ struct UBP_Prompt_MaidenVoyage_FishingRodTutorial_C_UnregisterCharacterEvents_Im
 	struct FObjectMessagingDispatcherHandle*           CharacterDispatcher;                                      // (ConstParm, Parm, OutParm, ReferenceParm)
 };
 
+// Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.PostInitialize
+struct UBP_Prompt_MaidenVoyage_FishingRodTutorial_C_PostInitialize_Params
+{
+};
+
+// Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.UnregisterOtherEvents_Implementable
+struct UBP_Prompt_MaidenVoyage_FishingRodTutorial_C_UnregisterOtherEvents_Implementable_Params
+{
+};
+
 // Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.OnWield
 struct UBP_Prompt_MaidenVoyage_FishingRodTutorial_C_OnWield_Params
 {
@@ -126,6 +141,12 @@ struct UBP_Prompt_MaidenVoyage_FishingRodTutorial_C_OnStow_Params
 struct UBP_Prompt_MaidenVoyage_FishingRodTutorial_C_OnFishEscaping_Params
 {
 	struct FEventFishingFishEscaping                   Event;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.OnTakeControl
+struct UBP_Prompt_MaidenVoyage_FishingRodTutorial_C_OnTakeControl_Params
+{
+	struct FEventPlayerTakenControlOfControllable      NewParam;                                                 // (Parm)
 };
 
 // Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.ExecuteUbergraph_BP_Prompt_MaidenVoyage_FishingRodTutorial
