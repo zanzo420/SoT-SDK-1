@@ -75,6 +75,21 @@ public:
 };
 
 
+// Class DeliverableFramework.DeliverableTooltipCustomizerInterface
+// 0x0000 (0x0028 - 0x0028)
+class UDeliverableTooltipCustomizerInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class DeliverableFramework.DeliverableTooltipCustomizerInterface");
+		return ptr;
+	}
+
+};
+
+
 }
 
 #ifdef _MSC_VER

@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Proposal_StarsOfAThief_Chapter2.Proposal_StarsOfAThief_Chapter2_C
-// 0x0000 (0x0140 - 0x0140)
+// 0x0000 (0x0138 - 0x0138)
 class UProposal_StarsOfAThief_Chapter2_C : public UVoyageCheckpointProposalDesc
 {
 public:

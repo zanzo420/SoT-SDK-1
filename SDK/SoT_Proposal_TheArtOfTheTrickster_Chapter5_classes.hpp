@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Proposal_TheArtOfTheTrickster_Chapter5.Proposal_TheArtOfTheTrickster_Chapter5_C
-// 0x0000 (0x0140 - 0x0140)
+// 0x0000 (0x0138 - 0x0138)
 class UProposal_TheArtOfTheTrickster_Chapter5_C : public UVoyageCheckpointProposalDesc
 {
 public:

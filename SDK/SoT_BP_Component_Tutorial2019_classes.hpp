@@ -47,7 +47,7 @@ public:
 	void ReceiveTutorial2019BeginPlayOnClient();
 	void ReceiveTutorial2019BeginPlayOnServer();
 	void ForceDisableComponent_Blueprint();
-	void Set_Prompts_Visibility(bool IsHIdden, bool ReEvaluate, float Delay_In_Seconds);
+	void Set_Prompts_Visibility(bool IsHidden, bool ReEvaluate, float Delay_In_Seconds);
 	void ControllerOnEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason);
 	void ExecuteUbergraph_BP_Component_Tutorial2019(int EntryPoint);
 };

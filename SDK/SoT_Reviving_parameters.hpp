@@ -14,6 +14,16 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function Reviving.DeathSelfInteractionComponent.SetGiveUpAvaliable
+struct UDeathSelfInteractionComponent_SetGiveUpAvaliable_Params
+{
+};
+
+// Function Reviving.DeathSelfInteractionComponent.OnRep_HasGivenUp
+struct UDeathSelfInteractionComponent_OnRep_HasGivenUp_Params
+{
+};
+
 // Function Reviving.ReviveComponent.OnRep_ReviveState
 struct UReviveComponent_OnRep_ReviveState_Params
 {
@@ -23,13 +33,6 @@ struct UReviveComponent_OnRep_ReviveState_Params
 // Function Reviving.ReviveComponent.HandleOwningCharacterEndPlay
 struct UReviveComponent_HandleOwningCharacterEndPlay_Params
 {
-};
-
-// Function Reviving.ReviveGhost.SetupGhostMaterials
-struct AReviveGhost_SetupGhostMaterials_Params
-{
-	class USkeletalMeshComponent*                      MeshComponent;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class AActor*                                      InReviveableOwner;                                        // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 }

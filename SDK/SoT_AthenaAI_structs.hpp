@@ -154,6 +154,19 @@ enum class EAITargetWeaponFiringArcResult : uint8_t
 };
 
 
+// Enum AthenaAI.EBlackboardIntValueComparisonType
+enum class EBlackboardIntValueComparisonType : uint8_t
+{
+	Equal                          = 0,
+	NotEqual                       = 1,
+	GreaterThan                    = 2,
+	LessThan                       = 3,
+	GreaterThanEquals              = 4,
+	LessThanEquals                 = 5,
+	EBlackboardIntValueComparisonType_MAX = 6
+};
+
+
 // Enum AthenaAI.EBlackboardValueCompositeType
 enum class EBlackboardValueCompositeType : uint8_t
 {
@@ -520,6 +533,17 @@ struct FAthenaAIControllerWeightedRangesParamValue
 	struct FWeightedProbabilityRangeOfRanges           Value;                                                    // 0x0008(0x0030) (Edit)
 };
 
+// ScriptStruct AthenaAI.AthenaAIControllerDamageTargetScoreFromPerceivedTarget
+// 0x0014
+struct FAthenaAIControllerDamageTargetScoreFromPerceivedTarget
+{
+	float                                              MinDamageTargetScore;                                     // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              MaxDamageTargetScore;                                     // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              DamageForMinDamageTargetScore;                            // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              DamageForMaxDamageTargetScore;                            // 0x000C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              RateToDecayDamagedFromTarget;                             // 0x0010(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct AthenaAI.AIStrategyMovementProperties
 // 0x0018
 struct FAIStrategyMovementProperties
@@ -581,12 +605,10 @@ struct FAthenaAICharacterControllerSpawnItemDescForItemCategory
 };
 
 // ScriptStruct AthenaAI.AthenaAIAbilityDamageStage
-// 0x0018
+// 0x0010
 struct FAthenaAIAbilityDamageStage
 {
-	float                                              HealthPercentageToStartStage;                             // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
-	TArray<class UAthenaAIAbilityStageParams*>         AbilitiesInStage;                                         // 0x0008(0x0010) (Edit, ExportObject, ZeroConstructor)
+	TArray<class UAthenaAIAbilityStageParams*>         AbilitiesInStage;                                         // 0x0000(0x0010) (Edit, ExportObject, ZeroConstructor)
 };
 
 // ScriptStruct AthenaAI.AthenaAICharacterControllerWeightedAmmoType
@@ -894,6 +916,24 @@ struct FAICustomClassIdNameOverrides
 {
 	TArray<class UClass*>                              ClassIds;                                                 // 0x0000(0x0010) (Edit, ZeroConstructor)
 	TArray<struct FText>                               Names;                                                    // 0x0010(0x0010) (Edit, ZeroConstructor)
+};
+
+// ScriptStruct AthenaAI.WeightedAmmoType
+// 0x0010
+struct FWeightedAmmoType
+{
+	float                                              ProbabilityAtRange;                                       // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
+	class UClass*                                      AmmoType;                                                 // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct AthenaAI.WeightedAmmoTypeRange
+// 0x0018
+struct FWeightedAmmoTypeRange
+{
+	float                                              MinRange;                                                 // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
+	TArray<struct FWeightedAmmoType>                   AmmoTypeProbabilities;                                    // 0x0008(0x0010) (Edit, ZeroConstructor)
 };
 
 // ScriptStruct AthenaAI.CarriedItemThreatOverride
@@ -1278,6 +1318,25 @@ struct FAIProgressiveWavesSpawnerArchive : public FAISpawnerArchive
 	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
 };
 
+// ScriptStruct AthenaAI.AthenaAIControllerTargetPickingData
+// 0x0038
+struct FAthenaAIControllerTargetPickingData
+{
+	struct FString                                     TargetName;                                               // 0x0000(0x0010) (ZeroConstructor)
+	bool                                               BestTargetByScore;                                        // 0x0010(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               IsCurrentTargetActor;                                     // 0x0011(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0012(0x0002) MISSED OFFSET
+	float                                              TargetScore;                                              // 0x0014(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              DistScore;                                                // 0x0018(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              FacingScore;                                              // 0x001C(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              TargetWeightScore;                                        // 0x0020(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              DamageScore;                                              // 0x0024(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              TargetDistance;                                           // 0x0028(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              TargetAngle;                                              // 0x002C(0x0004) (ZeroConstructor, IsPlainOldData)
+	int                                                NumTargeting;                                             // 0x0030(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              RecentDamage;                                             // 0x0034(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct AthenaAI.EventAIOnDelayedAssignedMeshConsumed
 // 0x0010
 struct FEventAIOnDelayedAssignedMeshConsumed
@@ -1523,11 +1582,20 @@ struct FBountySpawnerAudioChangedNetworkEvent : public FNetworkEventStruct
 };
 
 // ScriptStruct AthenaAI.EventAIBountySpawnerAllTargetsKilled
-// 0x0018
+// 0x0020
 struct FEventAIBountySpawnerAllTargetsKilled
 {
 	struct FName                                       IslandName;                                               // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	struct FGuid                                       CrewId;                                                   // 0x0008(0x0010) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      InstigatorOfFinalAIPawnDeath;                             // 0x0018(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct AthenaAI.EventAIBountySpawnerAdditionalTargetKilled
+// 0x0018
+struct FEventAIBountySpawnerAdditionalTargetKilled
+{
+	struct FString                                     TargetName;                                               // 0x0000(0x0010) (ZeroConstructor)
+	class AActor*                                      Instigator;                                               // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct AthenaAI.EventAIBountySpawnerTargetKilled

@@ -40,8 +40,8 @@ public:
 
 
 	void UserConstructionScript();
-	void ReceiveBeginPlay();
 	void ReceiveEndPlay(TEnumAsByte<EEndPlayReason>* EndPlayReason);
+	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_ItemPreview(int EntryPoint);
 	void PreviewShutdown__DelegateSignature(const struct FPiratePreviewShutdownEvent& Data);
 	void PreviewReady__DelegateSignature(const struct FPiratePreviewReadyEvent& Data);

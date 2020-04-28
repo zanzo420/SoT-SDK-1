@@ -61,6 +61,29 @@ struct FAIShipEncounterBattleDesc UAIShipDebugFunctionLibrary::STATIC_GenerateAI
 }
 
 
+// Function AIShips.AthenaAIShipController.ApplyControllerParams
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class UAthenaAIControllerParamsDataAsset* ParamsAsset                    (Parm, ZeroConstructor, IsPlainOldData)
+// class APawn*                   InPawn                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void AAthenaAIShipController::ApplyControllerParams(class UAthenaAIControllerParamsDataAsset* ParamsAsset, class APawn* InPawn)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function AIShips.AthenaAIShipController.ApplyControllerParams");
+
+	AAthenaAIShipController_ApplyControllerParams_Params params;
+	params.ParamsAsset = ParamsAsset;
+	params.InPawn = InPawn;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function AIShips.CursedCrewCustomisationInterface.SetCursedCrewCustomisationProperties
 // (Native, Event, Public, HasOutParms, BlueprintEvent)
 // Parameters:

@@ -147,6 +147,26 @@ void ABP_SmallShipNetProxy_C::OnLanternStateChanged(int* LanternStateBits)
 }
 
 
+// Function BP_SmallShipNetProxy.BP_SmallShipNetProxy_C.OnEmissaryActiveStateChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool*                          InNewEmissaryActiveState       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_SmallShipNetProxy_C::OnEmissaryActiveStateChanged(bool* InNewEmissaryActiveState)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_SmallShipNetProxy.BP_SmallShipNetProxy_C.OnEmissaryActiveStateChanged");
+
+	ABP_SmallShipNetProxy_C_OnEmissaryActiveStateChanged_Params params;
+	params.InNewEmissaryActiveState = InNewEmissaryActiveState;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function BP_SmallShipNetProxy.BP_SmallShipNetProxy_C.ExecuteUbergraph_BP_SmallShipNetProxy
 // ()
 // Parameters:

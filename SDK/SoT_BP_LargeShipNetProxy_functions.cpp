@@ -147,6 +147,26 @@ void ABP_LargeShipNetProxy_C::OnLanternStateChanged(int* LanternStateBits)
 }
 
 
+// Function BP_LargeShipNetProxy.BP_LargeShipNetProxy_C.OnEmissaryActiveStateChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool*                          InNewEmissaryActiveState       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_LargeShipNetProxy_C::OnEmissaryActiveStateChanged(bool* InNewEmissaryActiveState)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShipNetProxy.BP_LargeShipNetProxy_C.OnEmissaryActiveStateChanged");
+
+	ABP_LargeShipNetProxy_C_OnEmissaryActiveStateChanged_Params params;
+	params.InNewEmissaryActiveState = InNewEmissaryActiveState;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
 // Function BP_LargeShipNetProxy.BP_LargeShipNetProxy_C.ExecuteUbergraph_BP_LargeShipNetProxy
 // ()
 // Parameters:

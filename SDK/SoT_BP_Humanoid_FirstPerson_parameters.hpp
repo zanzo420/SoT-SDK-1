@@ -2321,6 +2321,11 @@ struct UBP_Humanoid_FirstPerson_C_AnimNotify_EndCutscene_Params
 {
 };
 
+// Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_WakeUpFirstPerson
+struct UBP_Humanoid_FirstPerson_C_AnimNotify_WakeUpFirstPerson_Params
+{
+};
+
 // Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_ExitIdle
 struct UBP_Humanoid_FirstPerson_C_AnimNotify_ExitIdle_Params
 {
@@ -2358,16 +2363,6 @@ struct UBP_Humanoid_FirstPerson_C_AnimNotify_EnterFishing_Params
 
 // Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_CastFailEnd
 struct UBP_Humanoid_FirstPerson_C_AnimNotify_CastFailEnd_Params
-{
-};
-
-// Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_ResetAlternate
-struct UBP_Humanoid_FirstPerson_C_AnimNotify_ResetAlternate_Params
-{
-};
-
-// Function BP_Humanoid_FirstPerson.BP_Humanoid_FirstPerson_C.AnimNotify_CheckAlternate
-struct UBP_Humanoid_FirstPerson_C_AnimNotify_CheckAlternate_Params
 {
 };
 

@@ -37,6 +37,12 @@ struct ADrawDebugService_Multicast_AddSpheres_Params
 	TArray<struct FDrawDebugItemSphere>                Spheres;                                                  // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 };
 
+// Function AthenaDebug.DrawDebugService.Multicast_AddSectors
+struct ADrawDebugService_Multicast_AddSectors_Params
+{
+	TArray<struct FDrawDebugItemSector>                Sectors;                                                  // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+};
+
 // Function AthenaDebug.DrawDebugService.Multicast_AddLines
 struct ADrawDebugService_Multicast_AddLines_Params
 {

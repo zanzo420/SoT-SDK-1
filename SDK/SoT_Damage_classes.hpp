@@ -27,6 +27,21 @@ public:
 };
 
 
+// Class Damage.HitNotificationTargetInterface
+// 0x0000 (0x0028 - 0x0028)
+class UHitNotificationTargetInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Damage.HitNotificationTargetInterface");
+		return ptr;
+	}
+
+};
+
+
 }
 
 #ifdef _MSC_VER

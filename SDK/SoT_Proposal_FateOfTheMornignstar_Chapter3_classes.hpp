@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Proposal_FateOfTheMornignstar_Chapter3.Proposal_FateOfTheMornignstar_Chapter3_C
-// 0x0000 (0x0140 - 0x0140)
+// 0x0000 (0x0138 - 0x0138)
 class UProposal_FateOfTheMornignstar_Chapter3_C : public UVoyageCheckpointProposalDesc
 {
 public:

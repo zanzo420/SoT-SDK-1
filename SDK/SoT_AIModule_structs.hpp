@@ -206,7 +206,8 @@ enum class ETeamAttitude : uint8_t
 	Friendly                       = 0,
 	Neutral                        = 1,
 	Hostile                        = 2,
-	ETeamAttitude_MAX              = 3
+	Alliance                       = 3,
+	ETeamAttitude_MAX              = 4
 };
 
 

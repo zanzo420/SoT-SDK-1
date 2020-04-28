@@ -19,15 +19,15 @@ struct ABP_ItemPreview_C_UserConstructionScript_Params
 {
 };
 
-// Function BP_ItemPreview.BP_ItemPreview_C.ReceiveBeginPlay
-struct ABP_ItemPreview_C_ReceiveBeginPlay_Params
-{
-};
-
 // Function BP_ItemPreview.BP_ItemPreview_C.ReceiveEndPlay
 struct ABP_ItemPreview_C_ReceiveEndPlay_Params
 {
 	TEnumAsByte<EEndPlayReason>*                       EndPlayReason;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function BP_ItemPreview.BP_ItemPreview_C.ReceiveBeginPlay
+struct ABP_ItemPreview_C_ReceiveBeginPlay_Params
+{
 };
 
 // Function BP_ItemPreview.BP_ItemPreview_C.ExecuteUbergraph_BP_ItemPreview

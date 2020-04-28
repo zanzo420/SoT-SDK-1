@@ -411,6 +411,12 @@ struct AAthenaAICharacterController_SetItemSpecificNamedControllerParam_Params
 	float                                              Value;                                                    // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaAI.AthenaAICharacterController.SetDisableTurningForTest
+struct AAthenaAICharacterController_SetDisableTurningForTest_Params
+{
+	bool                                               InDisableTurningForTest;                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function AthenaAI.AthenaAICharacterController.ClearOverridePrioritiseInteractablesBeforeEnemies
 struct AAthenaAICharacterController_ClearOverridePrioritiseInteractablesBeforeEnemies_Params
 {
@@ -519,7 +525,6 @@ struct UAthenaAIDebugFunctionLibrary_GetEnvQueryManagerNumRunningQueries_Params
 struct UAthenaAIDebugFunctionLibrary_EnableMaximumSightSettings_Params
 {
 	class AAthenaAIController*                         AIController;                                             // (Parm, ZeroConstructor, IsPlainOldData)
-	class UAthenaAIControllerParamsDataAsset*          ControllerParams;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaAI.AthenaAIDebugFunctionLibrary.EnableBehaviorTreeLogging

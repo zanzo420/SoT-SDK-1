@@ -172,6 +172,22 @@ public:
 };
 
 
+// Class TestUtilities.MockActorWithMessagingDispatcherAndSceneComponent
+// 0x0008 (0x04C0 - 0x04B8)
+class AMockActorWithMessagingDispatcherAndSceneComponent : public ATestActorWithObjectMessagingDispatcher
+{
+public:
+	class USceneComponent*                             SceneComponent;                                           // 0x04B8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class TestUtilities.MockActorWithMessagingDispatcherAndSceneComponent");
+		return ptr;
+	}
+
+};
+
+
 // Class TestUtilities.TestController
 // 0x0000 (0x0470 - 0x0470)
 class ATestController : public AController
