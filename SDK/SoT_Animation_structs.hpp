@@ -118,11 +118,12 @@ struct FCosmeticItems
 };
 
 // ScriptStruct Animation.CosmeticItemAnimationSetLoopData
-// 0x0010
+// 0x0018
 struct FCosmeticItemAnimationSetLoopData
 {
 	class UAnimSequenceBase*                           Into;                                                     // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UAnimSequenceBase*                           Loop;                                                     // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FName                                       LoopSyncGroup;                                            // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 // ScriptStruct Animation.DockableInfo
@@ -240,7 +241,7 @@ struct FEventPreviewCharacterAnimationRequest
 // 0x0008
 struct FAnimationStateCompleteEvent
 {
-	class UClass*                                      CompletedStateId;                                         // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UClass*                                      CompletedStateId;                                         // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Animation.WeightedAnimationTimeout

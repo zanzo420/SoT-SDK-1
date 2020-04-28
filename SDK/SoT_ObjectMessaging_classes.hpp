@@ -71,8 +71,11 @@ public:
 	}
 
 
+	void STATIC_UnregisterEventsForObject(class UObject* EventSource, struct FObjectMessagingObjectScoper* ObjectScoper);
+	void STATIC_UnregisterEvents(struct FObjectMessagingObjectScoper* ObjectScoper);
 	void STATIC_UnregisterEventFromHandle(struct FObjectMessagingDispatcherHandle* Dispatcher, struct FObjectMessagingHandle* Handle);
 	void STATIC_UnregisterEvent(struct FObjectMessagingDispatcher* Dispatcher, struct FObjectMessagingHandle* Handle);
+	void STATIC_RegisterEventWithObjectScoper(class UObject* EventSource, class UObject* FunctionOwner, const struct FString& FunctionName, class UStruct* EventType, struct FObjectMessagingObjectScoper* ObjectScoper);
 	void STATIC_RegisterEventFromHandle(class UObject* FunctionOwner, const struct FString& FunctionName, class UStruct* EventType, struct FObjectMessagingDispatcherHandle* MessageDispatcher, struct FObjectMessagingHandle* Handle);
 	void STATIC_RegisterEvent(class UObject* FunctionOwner, const struct FString& FunctionName, class UStruct* EventType, struct FObjectMessagingDispatcher* MessageDispatcher, struct FObjectMessagingHandle* Handle);
 	bool STATIC_IsObjectMessagingDispatcherValid(struct FObjectMessagingDispatcherHandle* Handle);

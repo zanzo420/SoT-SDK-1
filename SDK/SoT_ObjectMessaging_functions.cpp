@@ -12,6 +12,54 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
+// Function ObjectMessaging.ObjectMessagingFunctions.UnregisterEventsForObject
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FObjectMessagingObjectScoper ObjectScoper                   (Parm, OutParm, ReferenceParm)
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UObjectMessagingFunctions::STATIC_UnregisterEventsForObject(class UObject* EventSource, struct FObjectMessagingObjectScoper* ObjectScoper)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ObjectMessaging.ObjectMessagingFunctions.UnregisterEventsForObject");
+
+	UObjectMessagingFunctions_UnregisterEventsForObject_Params params;
+	params.EventSource = EventSource;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (ObjectScoper != nullptr)
+		*ObjectScoper = params.ObjectScoper;
+}
+
+
+// Function ObjectMessaging.ObjectMessagingFunctions.UnregisterEvents
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FObjectMessagingObjectScoper ObjectScoper                   (Parm, OutParm, ReferenceParm)
+
+void UObjectMessagingFunctions::STATIC_UnregisterEvents(struct FObjectMessagingObjectScoper* ObjectScoper)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ObjectMessaging.ObjectMessagingFunctions.UnregisterEvents");
+
+	UObjectMessagingFunctions_UnregisterEvents_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (ObjectScoper != nullptr)
+		*ObjectScoper = params.ObjectScoper;
+}
+
+
 // Function ObjectMessaging.ObjectMessagingFunctions.UnregisterEventFromHandle
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
@@ -61,6 +109,37 @@ void UObjectMessagingFunctions::STATIC_UnregisterEvent(struct FObjectMessagingDi
 		*Dispatcher = params.Dispatcher;
 	if (Handle != nullptr)
 		*Handle = params.Handle;
+}
+
+
+// Function ObjectMessaging.ObjectMessagingFunctions.RegisterEventWithObjectScoper
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// class UObject*                 EventSource                    (Parm, ZeroConstructor, IsPlainOldData)
+// struct FObjectMessagingObjectScoper ObjectScoper                   (Parm, OutParm, ReferenceParm)
+// class UObject*                 FunctionOwner                  (Parm, ZeroConstructor, IsPlainOldData)
+// struct FString                 FunctionName                   (Parm, ZeroConstructor)
+// class UStruct*                 EventType                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UObjectMessagingFunctions::STATIC_RegisterEventWithObjectScoper(class UObject* EventSource, class UObject* FunctionOwner, const struct FString& FunctionName, class UStruct* EventType, struct FObjectMessagingObjectScoper* ObjectScoper)
+{
+	static auto fn = UObject::FindObject<UFunction>("Function ObjectMessaging.ObjectMessagingFunctions.RegisterEventWithObjectScoper");
+
+	UObjectMessagingFunctions_RegisterEventWithObjectScoper_Params params;
+	params.EventSource = EventSource;
+	params.FunctionOwner = FunctionOwner;
+	params.FunctionName = FunctionName;
+	params.EventType = EventType;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	if (ObjectScoper != nullptr)
+		*ObjectScoper = params.ObjectScoper;
 }
 
 

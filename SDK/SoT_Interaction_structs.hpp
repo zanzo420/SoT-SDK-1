@@ -22,6 +22,20 @@ enum class EInteractionBlockReason : uint8_t
 };
 
 
+// Enum Interaction.EInteractableIdentifier
+enum class EInteractableIdentifier : uint8_t
+{
+	None                           = 0,
+	Capstan                        = 1,
+	Cannon                         = 2,
+	Harpoon                        = 3,
+	Sail                           = 4,
+	Wheel                          = 5,
+	MAX                            = 6,
+	EInteractableIdentifier_MAX    = 7
+};
+
+
 // Enum Interaction.EInteractionObject
 enum class EInteractionObject : uint8_t
 {

@@ -12021,6 +12021,13 @@ struct UKismetMathLibrary_GetYawPitchFromVector_Params
 	float                                              Pitch;                                                    // (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function Engine.KismetMathLibrary.GetYawFromVector
+struct UKismetMathLibrary_GetYawFromVector_Params
+{
+	struct FVector                                     InVec;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
+	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Engine.KismetMathLibrary.GetVectorArrayAverage
 struct UKismetMathLibrary_GetVectorArrayAverage_Params
 {

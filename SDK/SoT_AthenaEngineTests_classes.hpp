@@ -51,11 +51,11 @@ public:
 
 
 // Class AthenaEngineTests.MockSyncedRandomRetrievalComponent
-// 0x0010 (0x00D8 - 0x00C8)
+// 0x0018 (0x00E0 - 0x00C8)
 class UMockSyncedRandomRetrievalComponent : public UActorComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x00C8(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x18];                                      // 0x00C8(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

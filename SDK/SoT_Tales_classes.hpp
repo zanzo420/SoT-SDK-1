@@ -114,6 +114,52 @@ public:
 };
 
 
+// Class Tales.ContendedResourceServiceInterface
+// 0x0000 (0x0028 - 0x0028)
+class UContendedResourceServiceInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Tales.ContendedResourceServiceInterface");
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.WorldResourceRegistryInterface
+// 0x0000 (0x0028 - 0x0028)
+class UWorldResourceRegistryInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Tales.WorldResourceRegistryInterface");
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.ContendedResourceComponent
+// 0x0038 (0x0100 - 0x00C8)
+class UContendedResourceComponent : public UActorComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x38];                                      // 0x00C8(0x0038) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Tales.ContendedResourceComponent");
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.SplineFootprintPathComponent
 // 0x0030 (0x0620 - 0x05F0)
 class USplineFootprintPathComponent : public USplineComponent
@@ -554,7 +600,7 @@ public:
 
 
 // Class Tales.TaleQuestAddMerchantMapStepDesc
-// 0x0060 (0x0090 - 0x0030)
+// 0x0050 (0x0080 - 0x0030)
 class UTaleQuestAddMerchantMapStepDesc : public UTaleQuestStepDesc
 {
 public:
@@ -562,9 +608,8 @@ public:
 	struct FQuestVariableName                          IslandName;                                               // 0x0038(0x0010) (Edit)
 	struct FQuestVariableText                          DeliveryLocation;                                         // 0x0048(0x0010) (Edit)
 	struct FQuestVariableText                          DeliverByTime;                                            // 0x0058(0x0010) (Edit)
-	struct FQuestVariableText                          Haul;                                                     // 0x0068(0x0010) (Edit)
-	struct FQuestVariableMerchantItemArray             Items;                                                    // 0x0078(0x0010) (Edit)
-	class UMerchantMapLayout*                          Layout;                                                   // 0x0088(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableMerchantItemArray             Items;                                                    // 0x0068(0x0010) (Edit)
+	class UMerchantMapLayout*                          Layout;                                                   // 0x0078(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -675,14 +720,17 @@ public:
 
 
 // Class Tales.TaleQuestGrantRewardStepDesc
-// 0x0028 (0x0058 - 0x0030)
+// 0x0030 (0x0060 - 0x0030)
 class UTaleQuestGrantRewardStepDesc : public UTaleQuestStepDesc
 {
 public:
 	struct FRewardId                                   RewardId;                                                 // 0x0030(0x0008) (Edit)
 	class UClass*                                      Company;                                                  // 0x0038(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FGuid                                       Id;                                                       // 0x0040(0x0010) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FName                                       Feature;                                                  // 0x0050(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               ShouldGrantToAlliedCrews;                                 // 0x0050(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0051(0x0003) MISSED OFFSET
+	struct FName                                       Feature;                                                  // 0x0054(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x005C(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

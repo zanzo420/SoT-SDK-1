@@ -141,12 +141,6 @@ struct UInteractableInterface_ShouldDrawTooltipInWorldSpace_Params
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
-// Function Interaction.InteractableInterface.SetInteractionState
-struct UInteractableInterface_SetInteractionState_Params
-{
-	TEnumAsByte<EInteractableState>                    InNewInteractableState;                                   // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-};
-
 // Function Interaction.InteractableInterface.IsInteractableDisabled
 struct UInteractableInterface_IsInteractableDisabled_Params
 {
@@ -215,12 +209,6 @@ struct UInteractableInterface_CanInteractWithNotificationInputId_Params
 {
 	class AActor*                                      InInteractor;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 	class UClass*                                      NotificationInputId;                                      // (Parm, ZeroConstructor, IsPlainOldData)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-};
-
-// Function Interaction.InteractableInterface.CanInteractionStatesBeSet
-struct UInteractableInterface_CanInteractionStatesBeSet_Params
-{
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 

@@ -85,13 +85,11 @@ struct FPlayModeDefiniton
 };
 
 // ScriptStruct AthenaEngine.ActorComponentSelector
-// 0x0020
+// 0x0010
 struct FActorComponentSelector
 {
 	struct FName                                       ComponentName;                                            // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UActorComponent*                             CachedComponent;                                          // 0x0008(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	class UClass*                                      ComponentClass;                                           // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0018(0x0008) MISSED OFFSET
 };
 
 // ScriptStruct AthenaEngine.PlaySoundRpc

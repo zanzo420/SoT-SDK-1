@@ -29,23 +29,6 @@ void ABP_ItemPreview_C::UserConstructionScript()
 }
 
 
-// Function BP_ItemPreview.BP_ItemPreview_C.ReceiveBeginPlay
-// (Event, Public, BlueprintEvent)
-
-void ABP_ItemPreview_C::ReceiveBeginPlay()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview.BP_ItemPreview_C.ReceiveBeginPlay");
-
-	ABP_ItemPreview_C_ReceiveBeginPlay_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_ItemPreview.BP_ItemPreview_C.ReceiveEndPlay
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -57,6 +40,23 @@ void ABP_ItemPreview_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason>* EndPlayReaso
 
 	ABP_ItemPreview_C_ReceiveEndPlay_Params params;
 	params.EndPlayReason = EndPlayReason;
+
+	auto flags = fn->FunctionFlags;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
+
+// Function BP_ItemPreview.BP_ItemPreview_C.ReceiveBeginPlay
+// (Event, Public, BlueprintEvent)
+
+void ABP_ItemPreview_C::ReceiveBeginPlay()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview.BP_ItemPreview_C.ReceiveBeginPlay");
+
+	ABP_ItemPreview_C_ReceiveBeginPlay_Params params;
 
 	auto flags = fn->FunctionFlags;
 

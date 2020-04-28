@@ -14,6 +14,19 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
+// Function ObjectMessaging.ObjectMessagingFunctions.UnregisterEventsForObject
+struct UObjectMessagingFunctions_UnregisterEventsForObject_Params
+{
+	struct FObjectMessagingObjectScoper                ObjectScoper;                                             // (Parm, OutParm, ReferenceParm)
+	class UObject*                                     EventSource;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function ObjectMessaging.ObjectMessagingFunctions.UnregisterEvents
+struct UObjectMessagingFunctions_UnregisterEvents_Params
+{
+	struct FObjectMessagingObjectScoper                ObjectScoper;                                             // (Parm, OutParm, ReferenceParm)
+};
+
 // Function ObjectMessaging.ObjectMessagingFunctions.UnregisterEventFromHandle
 struct UObjectMessagingFunctions_UnregisterEventFromHandle_Params
 {
@@ -26,6 +39,16 @@ struct UObjectMessagingFunctions_UnregisterEvent_Params
 {
 	struct FObjectMessagingDispatcher                  Dispatcher;                                               // (Parm, OutParm, ReferenceParm)
 	struct FObjectMessagingHandle                      Handle;                                                   // (Parm, OutParm, ReferenceParm)
+};
+
+// Function ObjectMessaging.ObjectMessagingFunctions.RegisterEventWithObjectScoper
+struct UObjectMessagingFunctions_RegisterEventWithObjectScoper_Params
+{
+	class UObject*                                     EventSource;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FObjectMessagingObjectScoper                ObjectScoper;                                             // (Parm, OutParm, ReferenceParm)
+	class UObject*                                     FunctionOwner;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FString                                     FunctionName;                                             // (Parm, ZeroConstructor)
+	class UStruct*                                     EventType;                                                // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function ObjectMessaging.ObjectMessagingFunctions.RegisterEventFromHandle

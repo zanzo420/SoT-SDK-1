@@ -28,7 +28,7 @@ public:
 
 
 // Class AthenaDebug.DrawDebugService
-// 0x0068 (0x0478 - 0x0410)
+// 0x0078 (0x0488 - 0x0410)
 class ADrawDebugService : public AActor
 {
 public:
@@ -38,7 +38,8 @@ public:
 	TArray<struct FDrawDebugItemBox>                   BoxesReplicated;                                          // 0x0438(0x0010) (Net, ZeroConstructor)
 	TArray<struct FDrawDebugItemCapsule>               CapsulesReplicated;                                       // 0x0448(0x0010) (Net, ZeroConstructor)
 	TArray<struct FDrawDebugItemLine>                  LinesReplicated;                                          // 0x0458(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemString>                StringsReplicated;                                        // 0x0468(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemSector>                SectorsReplicated;                                        // 0x0468(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemString>                StringsReplicated;                                        // 0x0478(0x0010) (Net, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{
@@ -51,6 +52,7 @@ public:
 	void Multicast_ClearGroup(const struct FName& GroupName);
 	void Multicast_AddStrings(TArray<struct FDrawDebugItemString> Strings);
 	void Multicast_AddSpheres(TArray<struct FDrawDebugItemSphere> Spheres);
+	void Multicast_AddSectors(TArray<struct FDrawDebugItemSector> Sectors);
 	void Multicast_AddLines(TArray<struct FDrawDebugItemLine> Lines);
 	void Multicast_AddCapsules(TArray<struct FDrawDebugItemCapsule> Capsules);
 	void Multicast_AddBoxes(TArray<struct FDrawDebugItemBox> Boxes);

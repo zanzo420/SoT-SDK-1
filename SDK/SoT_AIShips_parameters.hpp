@@ -29,6 +29,13 @@ struct UAIShipDebugFunctionLibrary_GenerateAIShipBattleDesc_Params
 	struct FAIShipEncounterBattleDesc                  ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
+// Function AIShips.AthenaAIShipController.ApplyControllerParams
+struct AAthenaAIShipController_ApplyControllerParams_Params
+{
+	class UAthenaAIControllerParamsDataAsset*          ParamsAsset;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class APawn*                                       InPawn;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function AIShips.CursedCrewCustomisationInterface.SetCursedCrewCustomisationProperties
 struct UCursedCrewCustomisationInterface_SetCursedCrewCustomisationProperties_Params
 {

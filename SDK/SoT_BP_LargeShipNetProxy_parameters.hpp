@@ -55,6 +55,12 @@ struct ABP_LargeShipNetProxy_C_OnLanternStateChanged_Params
 	int*                                               LanternStateBits;                                         // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function BP_LargeShipNetProxy.BP_LargeShipNetProxy_C.OnEmissaryActiveStateChanged
+struct ABP_LargeShipNetProxy_C_OnEmissaryActiveStateChanged_Params
+{
+	bool*                                              InNewEmissaryActiveState;                                 // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function BP_LargeShipNetProxy.BP_LargeShipNetProxy_C.ExecuteUbergraph_BP_LargeShipNetProxy
 struct ABP_LargeShipNetProxy_C_ExecuteUbergraph_BP_LargeShipNetProxy_Params
 {

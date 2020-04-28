@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_MastEmissaryFlag.BP_MastEmissaryFlag_C
-// 0x0000 (0x0470 - 0x0470)
+// 0x0000 (0x04B8 - 0x04B8)
 class ABP_MastEmissaryFlag_C : public AMastEmissaryFlag
 {
 public:

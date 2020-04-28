@@ -13,14 +13,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Cannon.BP_Cannon_C
-// 0x0020 (0x0B30 - 0x0B10)
+// 0x0020 (0x0B38 - 0x0B18)
 class ABP_Cannon_C : public ACannon
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0B10(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	class UGroupedInteractableAreaComponent*           GroupedInteractableArea;                                  // 0x0B18(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UInteractableComponent*                      Interactable;                                             // 0x0B20(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UStaticMeshComponent*                        Collision;                                                // 0x0B28(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0B18(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
+	class UGroupedInteractableAreaComponent*           GroupedInteractableArea;                                  // 0x0B20(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UInteractableComponent*                      Interactable;                                             // 0x0B28(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UStaticMeshComponent*                        Collision;                                                // 0x0B30(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -180,6 +180,7 @@ public:
 	void ShowTavernBanners();
 	void ShowTaleDebug();
 	void ShowRandomCrewMemberGamerCard();
+	void ShowEmissaryVoteIndicators();
 	void ShowAllWelds();
 	void ShowAllRomeBeacons();
 	void ShowAllItemsInRadialInventory();
@@ -234,13 +235,15 @@ public:
 	void SetDebugCameraUseProjectileCollisionChannel(bool bUseProjectileChannel);
 	void SetDeathPenaltyRespawnTimer(float InSpawnTimer);
 	void SetDamageAllowedToPlayerShip(bool InAllowDamage);
+	void SetCurrentCulture(const struct FString& Culture);
 	void SetCapstanPosition(float Position);
 	void SetAITeamAttitude(const struct FString& TeamAString, const struct FString& TeamBString, const struct FString& AttitudeString);
 	void SetAIExclusiveAbility(const struct FString& AIAbilityString);
 	void SetAIAbilityTimeMultiplier(const struct FString& AIAbilityString, float IntervalCooldownMultiplier, float ActivationCooldownMultiplier);
+	void SetAIAbilityStage(int InStage);
 	void SetAbilityAlwaysOn(const struct FString& AIAbilityString);
 	void SendUpdateVoyageProgressEvent();
-	void SendStatEvent(const struct FString& StatName, uint64_t StatValue);
+	void SendStatEvent(uint32_t StatId, uint64_t StatValue);
 	void SendRewardRequestEvent(const struct FString& CompanyNameAndRewardIdSeparatedByColon);
 	void SendResetReaperLevelEvent();
 	void ScuttleShip();
@@ -262,6 +265,7 @@ public:
 	void RewindPhysicsSceneBy(float SecondsToRewindBy);
 	void ReviveLocalPlayerInstantly();
 	void ReviveLocalPlayerAccordingToReviveTime();
+	void ReviveAllPlayerCharactersAccordingToReviveTime();
 	void ResurfaceShipByActorId(const struct FString& ShipActorIdString);
 	void RestoreAndRestockShipAndPlayer();
 	void RestockIslandBarrels();
@@ -308,7 +312,6 @@ public:
 	void MoveStormToPlayer();
 	void MessageBoxOnGraphicsThreadTest();
 	void MakeSharksBrainDead();
-	void MakeLocalPlayerRevivable();
 	void MakeDebugPetSpawner();
 	void LogShipHierarchy();
 	void LogServerShipHierarchy();
@@ -337,8 +340,11 @@ public:
 	void KillCrew(const struct FString& CrewId);
 	void KillAllSkeletons();
 	void KillAllPlayers();
+	void KillAllOtherPlayers();
+	void KillAllOtherPlayerCharacters();
 	void KillAllDebugAISpawners();
 	void KillAllCrews();
+	void KillAllAggressiveGhostShips();
 	void KillAllAggressiveGhostShipEncounters();
 	void JoinAlliance(const struct FString& OfferingCrew, const struct FString& AcceptingCrew);
 	void IPGOverride(const struct FName& BodyShape, float Distance);
@@ -354,6 +360,7 @@ public:
 	void IgniteClosestShip();
 	void IgniteAllShipFires();
 	void HideTaleDebug();
+	void HideEmissaryVoteIndicators();
 	void HideAllRomeBeacons();
 	void HealthSet(float Value);
 	void HealthReset();
@@ -382,6 +389,7 @@ public:
 	void FireCreatorCrewMinutesViewedStat(int InNumMinutes);
 	void FireCreatorCrewMinutesStreamedStat(int InNumMinutes);
 	void FireCreatorCrewCurrentViewersStat(int InNumViewers);
+	void FindText(const struct FString& Namespace, const struct FString& Key);
 	void FakeMigrateBountyQuests();
 	void EquipPirateTitle(const struct FString& PirateTitleType);
 	void EquipCompassInLoadout();
@@ -402,6 +410,9 @@ public:
 	void DrawNearbyAISpawnPointsRanged(float Range);
 	void DrawNearbyAISpawnPoints();
 	void DownPlayer();
+	void DownAllPlayers();
+	void DownAllOtherPlayers();
+	void DownAllOtherPlayerCharacters();
 	void DouseClosestShip();
 	void DouseAllShipFires();
 	void DiveShipByActorId(const struct FString& ShipActorIdString);
@@ -420,6 +431,7 @@ public:
 	void DisplayDrunkenness(bool Flag);
 	void DisableCinematicCamera();
 	void DisableAIBehaviour();
+	void DisableAIAbilityStageChecking(int DisableChecks);
 	void DioramaStartNearest(const struct FString& Spawner, const struct FString& DioramaDesc);
 	void DioramaStart(const struct FString& ActorName, const struct FString& Spawner, const struct FString& DioramaDesc);
 	void DioramaKillAllDebug();
@@ -469,6 +481,7 @@ public:
 	void CancelEmergentVoyages();
 	void CancelAllCrewVoyages();
 	void CancelActiveAIShipEncounters();
+	void BuryItem(const struct FString& NameOfItemToBury);
 	void BreakLeg();
 	void BlockMigrationForPlayer(bool Enabled);
 	void ApplyVenomWithParams(float InitialDamage, float DamagePerSecond, float DamageOverTimeDuration);
@@ -478,6 +491,7 @@ public:
 	void ApplyCursedCannonballStatusToShip(const struct FString& CannonballTypeString);
 	void ApplyCursedCannonballStatusToPlayer(const struct FString& CannonballTypeString);
 	void AllowTeleportWithItems(bool CanTeleport);
+	void AllJoinAlliance();
 	void AIPlayerShip();
 	void AdjustGhostShader(bool Enabled, float InStartingAmount, float InTargetAmount, float InVengeanceStartingAmount, float InVengeanceTargetAmount, float InDelayBeforeStart, float InBlendDuration);
 	void AddShipToCrew(const struct FString& ActorIdString, const struct FString& CrewId);

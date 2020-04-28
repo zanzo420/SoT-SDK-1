@@ -886,6 +886,11 @@ struct UAthenaCheatManager_ShowRandomCrewMemberGamerCard_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.ShowEmissaryVoteIndicators
+struct UAthenaCheatManager_ShowEmissaryVoteIndicators_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.ShowAllWelds
 struct UAthenaCheatManager_ShowAllWelds_Params
 {
@@ -1195,6 +1200,12 @@ struct UAthenaCheatManager_SetDamageAllowedToPlayerShip_Params
 	bool                                               InAllowDamage;                                            // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaCheat.AthenaCheatManager.SetCurrentCulture
+struct UAthenaCheatManager_SetCurrentCulture_Params
+{
+	struct FString                                     Culture;                                                  // (Parm, ZeroConstructor)
+};
+
 // Function AthenaCheat.AthenaCheatManager.SetCapstanPosition
 struct UAthenaCheatManager_SetCapstanPosition_Params
 {
@@ -1223,6 +1234,12 @@ struct UAthenaCheatManager_SetAIAbilityTimeMultiplier_Params
 	float                                              ActivationCooldownMultiplier;                             // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaCheat.AthenaCheatManager.SetAIAbilityStage
+struct UAthenaCheatManager_SetAIAbilityStage_Params
+{
+	int                                                InStage;                                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function AthenaCheat.AthenaCheatManager.SetAbilityAlwaysOn
 struct UAthenaCheatManager_SetAbilityAlwaysOn_Params
 {
@@ -1237,7 +1254,7 @@ struct UAthenaCheatManager_SendUpdateVoyageProgressEvent_Params
 // Function AthenaCheat.AthenaCheatManager.SendStatEvent
 struct UAthenaCheatManager_SendStatEvent_Params
 {
-	struct FString                                     StatName;                                                 // (Parm, ZeroConstructor)
+	uint32_t                                           StatId;                                                   // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	uint64_t                                           StatValue;                                                // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
@@ -1346,6 +1363,11 @@ struct UAthenaCheatManager_ReviveLocalPlayerInstantly_Params
 
 // Function AthenaCheat.AthenaCheatManager.ReviveLocalPlayerAccordingToReviveTime
 struct UAthenaCheatManager_ReviveLocalPlayerAccordingToReviveTime_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.ReviveAllPlayerCharactersAccordingToReviveTime
+struct UAthenaCheatManager_ReviveAllPlayerCharactersAccordingToReviveTime_Params
 {
 };
 
@@ -1592,11 +1614,6 @@ struct UAthenaCheatManager_MakeSharksBrainDead_Params
 {
 };
 
-// Function AthenaCheat.AthenaCheatManager.MakeLocalPlayerRevivable
-struct UAthenaCheatManager_MakeLocalPlayerRevivable_Params
-{
-};
-
 // Function AthenaCheat.AthenaCheatManager.MakeDebugPetSpawner
 struct UAthenaCheatManager_MakeDebugPetSpawner_Params
 {
@@ -1744,6 +1761,16 @@ struct UAthenaCheatManager_KillAllPlayers_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.KillAllOtherPlayers
+struct UAthenaCheatManager_KillAllOtherPlayers_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.KillAllOtherPlayerCharacters
+struct UAthenaCheatManager_KillAllOtherPlayerCharacters_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.KillAllDebugAISpawners
 struct UAthenaCheatManager_KillAllDebugAISpawners_Params
 {
@@ -1751,6 +1778,11 @@ struct UAthenaCheatManager_KillAllDebugAISpawners_Params
 
 // Function AthenaCheat.AthenaCheatManager.KillAllCrews
 struct UAthenaCheatManager_KillAllCrews_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.KillAllAggressiveGhostShips
+struct UAthenaCheatManager_KillAllAggressiveGhostShips_Params
 {
 };
 
@@ -1839,6 +1871,11 @@ struct UAthenaCheatManager_IgniteAllShipFires_Params
 
 // Function AthenaCheat.AthenaCheatManager.HideTaleDebug
 struct UAthenaCheatManager_HideTaleDebug_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.HideEmissaryVoteIndicators
+struct UAthenaCheatManager_HideEmissaryVoteIndicators_Params
 {
 };
 
@@ -2004,6 +2041,13 @@ struct UAthenaCheatManager_FireCreatorCrewCurrentViewersStat_Params
 	int                                                InNumViewers;                                             // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaCheat.AthenaCheatManager.FindText
+struct UAthenaCheatManager_FindText_Params
+{
+	struct FString                                     Namespace;                                                // (Parm, ZeroConstructor)
+	struct FString                                     Key;                                                      // (Parm, ZeroConstructor)
+};
+
 // Function AthenaCheat.AthenaCheatManager.FakeMigrateBountyQuests
 struct UAthenaCheatManager_FakeMigrateBountyQuests_Params
 {
@@ -2117,6 +2161,21 @@ struct UAthenaCheatManager_DownPlayer_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.DownAllPlayers
+struct UAthenaCheatManager_DownAllPlayers_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.DownAllOtherPlayers
+struct UAthenaCheatManager_DownAllOtherPlayers_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.DownAllOtherPlayerCharacters
+struct UAthenaCheatManager_DownAllOtherPlayerCharacters_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.DouseClosestShip
 struct UAthenaCheatManager_DouseClosestShip_Params
 {
@@ -2213,6 +2272,12 @@ struct UAthenaCheatManager_DisableCinematicCamera_Params
 // Function AthenaCheat.AthenaCheatManager.DisableAIBehaviour
 struct UAthenaCheatManager_DisableAIBehaviour_Params
 {
+};
+
+// Function AthenaCheat.AthenaCheatManager.DisableAIAbilityStageChecking
+struct UAthenaCheatManager_DisableAIAbilityStageChecking_Params
+{
+	int                                                DisableChecks;                                            // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function AthenaCheat.AthenaCheatManager.DioramaStartNearest
@@ -2492,6 +2557,12 @@ struct UAthenaCheatManager_CancelActiveAIShipEncounters_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.BuryItem
+struct UAthenaCheatManager_BuryItem_Params
+{
+	struct FString                                     NameOfItemToBury;                                         // (Parm, ZeroConstructor)
+};
+
 // Function AthenaCheat.AthenaCheatManager.BreakLeg
 struct UAthenaCheatManager_BreakLeg_Params
 {
@@ -2545,6 +2616,11 @@ struct UAthenaCheatManager_ApplyCursedCannonballStatusToPlayer_Params
 struct UAthenaCheatManager_AllowTeleportWithItems_Params
 {
 	bool                                               CanTeleport;                                              // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaCheat.AthenaCheatManager.AllJoinAlliance
+struct UAthenaCheatManager_AllJoinAlliance_Params
+{
 };
 
 // Function AthenaCheat.AthenaCheatManager.AIPlayerShip

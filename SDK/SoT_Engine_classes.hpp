@@ -2848,25 +2848,6 @@ public:
 };
 
 
-// Class Engine.RotatingMovementComponent
-// 0x0020 (0x0130 - 0x0110)
-class URotatingMovementComponent : public UMovementComponent
-{
-public:
-	struct FRotator                                    RotationRate;                                             // 0x0110(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     PivotTranslation;                                         // 0x011C(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      bRotationInLocalSpace : 1;                                // 0x0128(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0129(0x0007) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class Engine.RotatingMovementComponent");
-		return ptr;
-	}
-
-};
-
-
 // Class Engine.ParticleSystemComponent
 // 0x02D0 (0x0840 - 0x0570)
 class UParticleSystemComponent : public UPrimitiveComponent
@@ -6907,6 +6888,25 @@ public:
 };
 
 
+// Class Engine.RotatingMovementComponent
+// 0x0020 (0x0130 - 0x0110)
+class URotatingMovementComponent : public UMovementComponent
+{
+public:
+	struct FRotator                                    RotationRate;                                             // 0x0110(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     PivotTranslation;                                         // 0x011C(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      bRotationInLocalSpace : 1;                                // 0x0128(0x0001) (Edit, BlueprintVisible)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0129(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Engine.RotatingMovementComponent");
+		return ptr;
+	}
+
+};
+
+
 // Class Engine.NavigationInvokerComponent
 // 0x0008 (0x00D0 - 0x00C8)
 class UNavigationInvokerComponent : public UActorComponent
@@ -9105,6 +9105,21 @@ public:
 };
 
 
+// Class Engine.AnimNotifyCondition
+// 0x0000 (0x0028 - 0x0028)
+class UAnimNotifyCondition : public UObject
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Engine.AnimNotifyCondition");
+		return ptr;
+	}
+
+};
+
+
 // Class Engine.AnimNotifyState_TimedParticleEffect
 // 0x0030 (0x0058 - 0x0028)
 class UAnimNotifyState_TimedParticleEffect : public UAnimNotifyState
@@ -9893,6 +9908,7 @@ public:
 	bool STATIC_Greater_ByteByte(unsigned char A, unsigned char B);
 	int STATIC_GetYear(const struct FDateTime& A);
 	void STATIC_GetYawPitchFromVector(const struct FVector& InVec, float* Yaw, float* Pitch);
+	float STATIC_GetYawFromVector(const struct FVector& InVec);
 	struct FVector STATIC_GetVectorArrayAverage(TArray<struct FVector> Vectors);
 	struct FVector STATIC_GetUpVector(const struct FRotator& InRot);
 	float STATIC_GetTotalSeconds(const struct FTimespan& A);
@@ -11397,11 +11413,12 @@ public:
 	float                                              MBPWorldHalfExtentInCM;                                   // 0x00C0(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
 	unsigned char                                      AthenaCharacterPxAggregateCapacity;                       // 0x00C4(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      BuoyantStorageContainerPxAggregateCapacity;               // 0x00C5(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      FaunaPxAggregateCapacity;                                 // 0x00C6(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      FloatingItemProxyPxAggregateCapacity;                     // 0x00C7(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      RowboatPxAggregateCapacity;                               // 0x00C8(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      ShipPxAggregateCapacity;                                  // 0x00C9(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData05[0x6];                                       // 0x00CA(0x0006) MISSED OFFSET
+	unsigned char                                      BuoyantActorPxAggregateCapacity;                          // 0x00C6(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      FaunaPxAggregateCapacity;                                 // 0x00C7(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      FloatingItemProxyPxAggregateCapacity;                     // 0x00C8(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      RowboatPxAggregateCapacity;                               // 0x00C9(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      ShipPxAggregateCapacity;                                  // 0x00CA(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData05[0x5];                                       // 0x00CB(0x0005) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

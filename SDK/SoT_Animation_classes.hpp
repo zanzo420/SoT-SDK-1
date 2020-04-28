@@ -311,6 +311,22 @@ public:
 };
 
 
+// Class Animation.AnimNotify_PlayMontage
+// 0x0008 (0x0038 - 0x0030)
+class UAnimNotify_PlayMontage : public UAnimNotify
+{
+public:
+	class UAnimMontage*                                MontageToPlay;                                            // 0x0030(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Animation.AnimNotify_PlayMontage");
+		return ptr;
+	}
+
+};
+
+
 // Class Animation.AnimNotify_SetCosmeticItemVisibility
 // 0x0008 (0x0038 - 0x0030)
 class UAnimNotify_SetCosmeticItemVisibility : public UAnimNotify
@@ -419,6 +435,39 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class Animation.AnimNotify_ToggleIK");
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.AnimNotifyCondition_FeatureConfigValidation
+// 0x0010 (0x0038 - 0x0028)
+class UAnimNotifyCondition_FeatureConfigValidation : public UAnimNotifyCondition
+{
+public:
+	struct FName                                       Feature;                                                  // 0x0028(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               TriggerWhenDisabled;                                      // 0x0030(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Animation.AnimNotifyCondition_FeatureConfigValidation");
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.AnimNotifyState_SetLookAtEnabledForDuration
+// 0x0000 (0x0028 - 0x0028)
+class UAnimNotifyState_SetLookAtEnabledForDuration : public UAnimNotifyState
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class Animation.AnimNotifyState_SetLookAtEnabledForDuration");
 		return ptr;
 	}
 
@@ -581,14 +630,14 @@ public:
 
 
 // Class Animation.CosmeticItemAnimationInstance
-// 0x0090 (0x04D0 - 0x0440)
+// 0x00A0 (0x04E0 - 0x0440)
 class UCosmeticItemAnimationInstance : public UAnimInstance
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0440(0x0008) MISSED OFFSET
 	class UCosmeticItemAnimationSetDataAsset*          AnimationDataSet;                                         // 0x0448(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UAnimMontage*                                ActiveMontage;                                            // 0x0450(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x78];                                      // 0x0458(0x0078) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x88];                                      // 0x0458(0x0088) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -600,12 +649,12 @@ public:
 
 
 // Class Animation.CosmeticItemAnimationSetDataAsset
-// 0x0020 (0x0048 - 0x0028)
+// 0x0028 (0x0050 - 0x0028)
 class UCosmeticItemAnimationSetDataAsset : public UDataAsset
 {
 public:
-	struct FCosmeticItemAnimationSetLoopData           LoopData;                                                 // 0x0028(0x0010) (Edit, DisableEditOnInstance)
-	TArray<class UAnimSequenceBase*>                   OneShotSequences;                                         // 0x0038(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FCosmeticItemAnimationSetLoopData           LoopData;                                                 // 0x0028(0x0018) (Edit, DisableEditOnInstance)
+	TArray<class UAnimSequenceBase*>                   OneShotSequences;                                         // 0x0040(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

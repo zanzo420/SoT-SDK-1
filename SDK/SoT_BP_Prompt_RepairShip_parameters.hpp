@@ -24,11 +24,6 @@ struct UBP_Prompt_RepairShip_C_RegisterDamageEventWithCurrentShip_Params
 {
 };
 
-// Function BP_Prompt_RepairShip.BP_Prompt_RepairShip_C.UnregisterOtherEvents_Implementable
-struct UBP_Prompt_RepairShip_C_UnregisterOtherEvents_Implementable_Params
-{
-};
-
 // Function BP_Prompt_RepairShip.BP_Prompt_RepairShip_C.Evaluate
 struct UBP_Prompt_RepairShip_C_Evaluate_Params
 {

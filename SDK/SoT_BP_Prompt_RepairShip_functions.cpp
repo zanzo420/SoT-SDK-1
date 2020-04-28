@@ -46,23 +46,6 @@ void UBP_Prompt_RepairShip_C::RegisterDamageEventWithCurrentShip()
 }
 
 
-// Function BP_Prompt_RepairShip.BP_Prompt_RepairShip_C.UnregisterOtherEvents_Implementable
-// (Event, Public, BlueprintEvent)
-
-void UBP_Prompt_RepairShip_C::UnregisterOtherEvents_Implementable()
-{
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_RepairShip.BP_Prompt_RepairShip_C.UnregisterOtherEvents_Implementable");
-
-	UBP_Prompt_RepairShip_C_UnregisterOtherEvents_Implementable_Params params;
-
-	auto flags = fn->FunctionFlags;
-
-	UObject::ProcessEvent(fn, &params);
-
-	fn->FunctionFlags = flags;
-}
-
-
 // Function BP_Prompt_RepairShip.BP_Prompt_RepairShip_C.Evaluate
 // (Public, BlueprintCallable, BlueprintEvent)
 
